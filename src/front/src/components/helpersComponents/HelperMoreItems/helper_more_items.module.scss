@@ -1,0 +1,68 @@
+@import "../../../assets/mixins/mixins.scss";
+
+#button_wrapper {
+    @include flexCenter();
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #808080;
+    padding: 0;
+    min-width: 0 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    & > svg {
+        width: 30px;
+        color: #808080;
+    }
+}
+
+.folder_page_menu_item {
+    @include flexCenterStart();
+    gap: 20px;
+    transition-duration: 200ms;
+    position: relative !important;
+    &:hover .folder_page_menu_item_name {
+        color: #282828;
+    }
+    & > svg:nth-child(3) {
+        position: absolute;
+        right: 10px;
+    }
+    &:last-child {
+        & > svg {
+            margin-bottom: 2px;
+        }
+    }
+}
+.folder_page_menu_item_name {
+    @include font(12px, normal, "Inter-400", #808080);
+    font-weight: 300;
+}
+
+.more_items_folder_wrapper {
+    @include flexCenterStart();
+    font-weight: 300;
+    gap: 20px;
+
+    & > div {
+        @include flexCenter();
+        @include size(13px, 13px);
+        &:after {
+            content: "";
+            width: 13px;
+            height: 13px;
+        }
+    }
+    &:hover .more_items_folder_name {
+        color: #282828;
+    }
+    .more_items_folder_name {
+        @include font(12px, normal, "Inter-400", #808080);
+        transition-duration: 200ms;
+        max-width: 101px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

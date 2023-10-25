@@ -1,0 +1,173 @@
+@import "../../../assets/mixins/mixins.scss";
+
+.confirmation_code_wrapper {
+    width: 100%;
+    height: 100vh;
+    transition-delay: 200ms;
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    & * {
+        font-family: "Inter-400" !important;
+    }
+    .confirm_code_wrapper_main {
+        @include flexCenter();
+        width: 50%;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        right: -50%;
+        animation: right_to_left 200ms;
+        animation-fill-mode: forwards;
+        .confirm_content_wrapper {
+            @include flColCenter();
+            background-color: #fff;
+            .confirmation_title {
+                font-weight: 400;
+                font-size: 28px;
+                line-height: 34px;
+                margin-bottom: 32px;
+            }
+            .confirmation_clue_text {
+                max-width: 55%;
+                text-align: center;
+                color: #808080;
+                margin-bottom: 16px;
+            }
+            .invalid_confirm_code {
+                @include font(14px, normal, "Inter-400", rgba(229, 0, 0, 0.75));
+                font-weight: 400;
+                height: 17px;
+                margin-bottom: 20px;
+            }
+            .confirmation_confirm_btn {
+                background: var(--m-c);
+                cursor: pointer;
+                color: #fff;
+                width: 350px;
+                height: 45px;
+                display: flex;
+                border: none;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                &:disabled {
+                    background-color: #808080;
+                }
+            }
+            & > div:last-child {
+                margin-top: 27px;
+                padding: 0 20px;
+                display: flex;
+                width: 350px;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 14px;
+                color: #808080;
+                & > p {
+                    cursor: pointer;
+                }
+                & > button {
+                    background-color: #ffffff00;
+                    border: none;
+                    outline: none;
+                    color: #808080;
+                    font-size: 14px;
+                    cursor: pointer;
+                    & > span {
+                        width: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .confirm_page_is_closing {
+        animation: left_to_right 200ms;
+    }
+}
+.vi__wrapper input::placeholder {
+    color: #fff !important;
+    background: #fff !important;
+}
+
+.vf_container {
+    margin-bottom: 10px;
+}
+
+.vf_character {
+    border: 1px solid #e8ebed;
+    border-radius: 5px !important;
+    font-size: 14px;
+    text-transform: uppercase;
+    height: 30px;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vf_character.active {
+    border-color: rgba(229, 0, 0, 0.6) !important;
+    background: rgba(229, 0, 0, 0.05);
+    animation: shake 0.7s forwards;
+}
+.vf_character_selected {
+    outline-color: var(--m-c);
+    color: var(--m-c);
+}
+
+.vf_character_inactive {
+    background-color: #fff;
+}
+
+@keyframes right_to_left {
+    0% {
+        right: -50%;
+    }
+    100% {
+        right: 0;
+    }
+}
+@keyframes left_to_right {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: -50%;
+    }
+}
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(10deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(-10deg);
+    }
+    40% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(0);
+    }
+    70% {
+        transform: rotate(-10deg);
+    }
+    80% {
+        transform: rotate(0);
+    }
+    90% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}

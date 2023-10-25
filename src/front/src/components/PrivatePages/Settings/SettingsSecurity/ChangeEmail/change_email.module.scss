@@ -1,0 +1,211 @@
+@import "../../../../../assets/mixins/mixins.scss";
+.change_email_wrapper {
+    @include flColStart();
+    width: 100%;
+    align-self: flex-start;
+    padding: 13px 0px 20px 20px;
+    gap: 30px;
+    & * {
+        font-family: "Inter-400" !important;
+    }
+    .change_parts {
+        @include flColStart();
+        width: 82.7%;
+        gap: 16px;
+        .change_part {
+            @include flexCenterBetween();
+            width: 100%;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+            .header_part {
+                @include flexCenterBetween();
+                width: 100%;
+                padding: 20px 24px;
+                .disabled_part_header {
+                    @include font(14px, normal, "Inter-400", #808080);
+                    font-weight: 400;
+                    .chechked_icon {
+                        @include size(22px, 22px);
+                    }
+                }
+                .disabled_part_header.confirmed {
+                    color: #292929;
+                }
+            }
+            .input_confirm_part {
+                @include flColCenterStart();
+                width: 100%;
+                .input_confirm_text_place {
+                    @include flColStart();
+                    gap: 7px;
+                    width: 100%;
+                    border-bottom: 1px solid #e8ebed;
+                    padding: 20px 24px;
+                    & > h2 {
+                        @include font(14px, normal, "Inter-400", #292929);
+                        font-weight: 400;
+                        width: 100%;
+                    }
+                    & > p {
+                        @include font(10px, normal, "Inter-400", #808080);
+                        font-weight: 400;
+                        width: 100%;
+                    }
+                }
+                .input_confirm_inp_btn_place {
+                    @include flexCenterBetween();
+                    width: 100%;
+                    padding: 16px 24px;
+                    & input {
+                        @include font(10px, normal, "Inter-400", #808080);
+                        font-weight: 400;
+                        margin-top: 0.5px;
+                    }
+                    & > button {
+                        @include size(128px, 35px);
+                        @include flexCenter();
+                        @include font(12px, normal, "Inter-400", #fff);
+                        cursor: pointer;
+                        background: var(--m-c);
+                        border: none;
+                        border-radius: 4px;
+                    }
+                }
+            }
+            .send_code_part {
+                @include flexCenterBetween();
+                width: 100%;
+                padding: 20px 24px;
+                .send_code_part_text_place {
+                    @include flColStart();
+                    width: 71%;
+                    gap: 12px;
+
+                    & > h2 {
+                        @include font(14px, normal, "Inter-400", #292929);
+                        font-weight: 400;
+                    }
+                    & > p {
+                        @include font(10px, normal, "Inter-400", #808080);
+                        font-weight: 400;
+                    }
+                }
+                .send_code_btn {
+                    @include size(64px, 30px);
+                    @include flexCenter();
+                    @include font(12px, normal, "Inter-500", #292929);
+                    font-weight: 500;
+                    white-space: nowrap;
+                    border: none;
+                    background: transparent;
+                    color: var(--m-c);
+                    cursor: pointer;
+                }
+            }
+            .confirm_code_part {
+                @include flColStart();
+                width: 100%;
+                .confirm_code_text_place {
+                    @include flColStart();
+                    width: 100%;
+                    border-bottom: 1px solid #e8ebed;
+                    padding: 20px 24px;
+                    gap: 4px;
+                    & > h2 {
+                        @include font(14px, normal, "Inter-400", #292929);
+                        font-weight: 400;
+                    }
+                    & > p {
+                        @include font(10px, normal, "Inter-400", #808080);
+                        font-weight: 400;
+                    }
+                }
+                .confirm_code_input_place {
+                    @include flexCenterBetween();
+                    width: 100%;
+                    padding: 16px 24px 0 21px;
+                    gap: 32px;
+                    .confirm_code_btn {
+                        @include font(12px, normal, "Inter-500", var(--m-c));
+                        @include flexStartStart();
+                        height: 38px;
+                        font-weight: 500;
+                        border: none;
+                        background: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    & button:disabled {
+        background-color: #808080 !important;
+    }
+}
+
+.vi__wrapper input::placeholder {
+    color: #fff !important;
+    background: #fff !important;
+}
+
+.vf_character {
+    border: 1px solid #e8ebed;
+    border-radius: 5px !important;
+    font-size: 14px;
+    text-transform: uppercase;
+    height: 30px;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vf_character.active {
+    border-color: rgba(229, 0, 0, 0.6) !important;
+    background: rgba(229, 0, 0, 0.05);
+    animation: shake 0.7s forwards;
+}
+.vf_character_selected {
+    outline-color: var(--m-c);
+    color: var(--m-c);
+}
+
+.vf_character_inactive {
+    background-color: #fff;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(10deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(-10deg);
+    }
+    40% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(0);
+    }
+    70% {
+        transform: rotate(-10deg);
+    }
+    80% {
+        transform: rotate(0);
+    }
+    90% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}

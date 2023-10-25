@@ -1,0 +1,23 @@
+@import "../../../assets/mixins/mixins.scss";
+.back_btn {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    text-decoration: none;
+    color: #292929;
+    transition-duration: 200ms;
+    & > svg {
+        @include size(10px, 10px);
+        color: inherit;
+        padding-top: 1px;
+        transition-duration: 200ms;
+    }
+    & > span {
+        @include font(12px, normal, "Inter-400", inherit);
+        font-weight: 400;
+        transition-duration: 200ms;
+    }
+    &:hover {
+        color: var(--m-c);
+    }
+}

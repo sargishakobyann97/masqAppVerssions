@@ -1,0 +1,258 @@
+@import "../../../../../../assets/mixins/mixins.scss";
+
+.pay_for_sub_main_wrapper {
+    @include flColStart();
+    width: 100%;
+    gap: 27px;
+    .back_btn {
+        display: flex;
+        align-items: baseline;
+        text-decoration: none;
+        gap: 6px;
+        color: #292929;
+        transition-duration: 200ms;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding-left: 3px;
+        & > svg {
+            @include size(10px, 10px);
+            color: inherit;
+            padding-top: 1px;
+            transition-duration: 200ms;
+        }
+        & > span {
+            @include font(12px, normal, "Inter-400", inherit);
+            font-weight: 400;
+            transition-duration: 200ms;
+        }
+        &:hover {
+            color: var(--m-c);
+        }
+    }
+    .pay_for_sub_wrapper {
+        @include flColStart();
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        gap: 35px;
+        position: relative;
+        .pay_for_sub_header {
+            @include flexCenterBetween();
+            width: 100%;
+            padding-left: 3px;
+            .pay_for_sub_header_info {
+                @include flColStart();
+                gap: 8px;
+                & > h2 {
+                    @include font(20px, normal, "Inter-400", #292929);
+                    font-weight: 400;
+                }
+                & > p {
+                    @include font(12px, normal, "Inter-400", #808080);
+                    font-weight: 400;
+                }
+            }
+        }
+        .payment_wrapper {
+            @include flColStart();
+            width: calc(100% + 47px);
+            gap: 20px;
+            height: 410px;
+            overflow-y: auto;
+            padding-left: 3px;
+            position: absolute;
+            top: 75px;
+            padding-top: 5px;
+            &::-webkit-scrollbar {
+                width: 0px !important;
+            }
+            .pay_for_sub_info_and_qr {
+                @include flexCenterStart();
+                width: 100%;
+                gap: 32px;
+                .pay_for_sub_info {
+                    @include flColStart();
+                    width: calc(100% - 338px);
+                    max-width: 700px;
+                    max-height: 180px;
+                    padding: 15px 39px 24px 24px;
+                    border-radius: 10px;
+                    background: #fff;
+                    box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.3);
+                    & > div {
+                        @include flexCenterBetween();
+                        width: 100%;
+                        & > h2 {
+                            @include font(16px, normal, "Inter-500", #292929);
+                            font-weight: 500;
+                            text-transform: capitalize;
+                        }
+                        .price_place {
+                            @include flexCenter();
+                            gap: 10px;
+                            & > span {
+                                @include font(16px, normal, "Inter-500", #292929);
+                                font-weight: 500;
+                                text-transform: capitalize;
+                            }
+                            .discounted_price {
+                                color: #0f9918;
+                            }
+                            .line_through {
+                                text-decoration: line-through;
+                                color: #808080;
+                            }
+                        }
+                    }
+                    .info_lists {
+                        margin-top: 32px;
+                        @include flColStart();
+                        gap: 6px;
+                        width: 100%;
+                        & > li {
+                            @include font(12px, normal, "Inter-400", #808080);
+                            list-style-type: disc;
+                            list-style-position: inside;
+                        }
+                    }
+                    .time_period,
+                    .team_name_info {
+                        color: #292929;
+                        font-family: "Inter-400";
+                        font-size: 11px;
+                        font-weight: 400;
+                        margin-top: 13px;
+                    }
+
+                    .team_name_info {
+                        margin-top: 5px;
+                    }
+                }
+                .pay_for_sub_qr {
+                    @include flexCenter();
+                    width: 131.438px;
+                    height: 131px;
+                    max-height: 180px;
+                    border-radius: 10px;
+                    border: 1px solid #d9d9d9;
+                }
+            }
+            .pay_method_promo_code_wrapper {
+                @include flColStart();
+                width: calc(100% - 338px);
+                max-width: 700px;
+                border-radius: 10px;
+                border: 1px solid #d9d9d9;
+                box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.25);
+                transition-duration: 200ms;
+                .pay_method_promo_btn {
+                    @include flexCenterBetween();
+                    width: 100%;
+                    cursor: pointer;
+                    padding: 16px 20px;
+                    .promo_btn_text {
+                        @include flexCenterStart();
+                        @include font(14px, normal, "Inter-500", #292929);
+                        gap: 12px;
+                        font-weight: 500;
+                        position: relative;
+                        .promo_code_error {
+                            @include font(11px, normal, "Inter-400", rgba(229, 0, 0, 0.75));
+                            font-weight: 400;
+                            position: absolute;
+                            margin-bottom: 12px;
+                            white-space: nowrap;
+                            left: calc(100% + 20px);
+                            transform: translateY(50%);
+                        }
+                    }
+                    .promo_btn_icon {
+                        @include flexCenter();
+                        margin-top: 2px;
+                        & > svg {
+                            width: 16px;
+                            height: 16px;
+                            color: #3b3b3b;
+                        }
+                    }
+                }
+                .promo_input_wrapper {
+                    @include flexCenterBetween();
+                    margin: 16px 0;
+                    gap: 12px;
+                    width: 100%;
+                    padding: 0 20px;
+                    position: relative;
+                    & > input {
+                        @include flexCenterStart();
+                        @include font(12px, normal, "Inter-400", #212121);
+                        font-weight: 400;
+                        width: calc(100% - 138px);
+                        height: 28px;
+                        border-radius: 5px;
+                        border: 1px solid #bcbcbc;
+                        padding: 0px 16px;
+                    }
+                    .activate_promo {
+                        @include flexCenter();
+                        @include font(12px, normal, "Inter-500", #fff);
+                        width: calc(100% - 268px);
+                        height: 100%;
+                        font-weight: 500;
+                        border-radius: 5px;
+                        background: #560bad;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+                .payment_method_types {
+                    @include flColStart();
+                    width: 100%;
+                    border-top: 1px solid #e8ebed;
+                    padding-top: 6px;
+                    padding-bottom: 8px;
+                    .payment_method_type {
+                        @include flexCenterBetween();
+                        @include font(12px, normal, "Inter-400", #808080);
+                        font-weight: 400;
+                        padding: 4px 24px;
+                        width: 100%;
+                        border: none;
+                        background: transparent;
+                        transition-duration: 200ms;
+                        cursor: pointer;
+                        .insufficient_funds {
+                            @include font(12px, normal, "Inter-400", rgba(229, 0, 0, 0.85));
+                            font-weight: 400;
+                        }
+                        &:disabled {
+                            background: transparent;
+                            color: #808080;
+                        }
+                    }
+                    .payment_method_type.selected {
+                        background: linear-gradient(90deg, #560bad 0%, rgba(86, 11, 173, 0.1) 100%);
+                        color: #fff;
+                    }
+                }
+            }
+            .pay_for_sub_promo_code_wrapper.active {
+                padding-bottom: 12px;
+            }
+            .pay_for_sub_pay_online {
+                @include flexCenter();
+                @include font(18px, normal, "Inter-400", #fff);
+                font-weight: 400;
+                width: calc(100% - 338px);
+                padding: 14.5px;
+                border-radius: 10px;
+                max-width: 700px;
+                background: #58029f;
+                cursor: pointer;
+                border: none;
+                text-decoration: none;
+            }
+        }
+    }
+}

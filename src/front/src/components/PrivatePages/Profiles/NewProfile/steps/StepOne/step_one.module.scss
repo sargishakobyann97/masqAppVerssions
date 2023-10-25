@@ -1,0 +1,30 @@
+.step_one_wrapper {
+    padding-top: 5px;
+    .new_profile_item_label {
+        color: #292929;
+        font-family: "Inter-400";
+        font-size: 14px;
+        line-height: 24px;
+        display: block;
+        margin: 20px 0 5px 0; // 24px --> 20px
+    }
+
+    .next_back_page_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .back_page_btn,
+        .next_page_btn {
+            color: var(--m-c);
+            font-family: "Inter-400";
+            font-size: 14px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 27px;
+            cursor: pointer;
+        }
+    }
+}

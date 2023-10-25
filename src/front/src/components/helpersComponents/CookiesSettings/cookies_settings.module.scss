@@ -1,0 +1,173 @@
+.cookies_settings_wrapper {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 39px);
+    background-color: #fff;
+    z-index: 3;
+
+    .back_to_profiles_btn {
+        color: var(--m-c);
+        font-family: "Inter-400";
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 15px; /* 107.143% */
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 32px;
+        width: fit-content;
+        & svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    .drop_wrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+    .drag_input {
+        position: relative;
+        width: 351px;
+        height: 251px;
+        border-radius: 10px;
+        border: 2px dashed #808080;
+
+        & > div {
+            height: 100%;
+        }
+
+        & > div > input {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            position: relative;
+            z-index: 3;
+        }
+        .drag_info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            pointer-events: none;
+
+            & svg {
+                color: #6a6a6a;
+            }
+            & > p:nth-of-type(1) {
+                color: #3b3b3b;
+                font-family: "Inter-400";
+                font-size: 12px;
+                margin-top: 16px;
+                & > span {
+                    color: var(--m-c);
+                    font-family: "Inter-500";
+                }
+            }
+            & > p:nth-of-type(2) {
+                margin-top: 12px;
+                color: #626262;
+                font-family: "Inter-400";
+                font-size: 11px;
+            }
+            & > h3 {
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+                margin-top: 12px;
+                color: #626262;
+                opacity: 0.7;
+                font-family: "Inter-400";
+                font-size: 11px;
+            }
+
+            .cookies_name,
+            .cookies_size {
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+                margin-top: 12px;
+                color: #626262;
+                opacity: 0.7;
+                font-family: "Inter-400";
+                font-size: 11px;
+            }
+            .cookies_size {
+                top: 0px;
+            }
+        }
+    }
+
+    .cookies_textarea_wrapper {
+        position: absolute;
+        border-radius: 3px;
+        border: 1px solid #808080;
+        background-color: #fff;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+        width: 408px;
+        height: 251px;
+        transition-duration: 200ms;
+        flex-shrink: 0;
+        padding: 45px 16px 16px 16px;
+        .screen_icons_wrapper {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            cursor: pointer;
+        }
+
+        & > {
+            textarea {
+                width: 100% !important;
+                height: 100% !important;
+                padding: 5px;
+                border: none;
+                resize: none;
+                border-radius: 5px;
+                color: #626262;
+                font-family: "Inter-400";
+                font-size: 12px;
+                letter-spacing: 1.5px;
+                line-height: 1.2;
+                &::selection {
+                    background-color: var(--m-c);
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .is_dragend {
+        border: 2px dashed var(--m-c);
+    }
+
+    .import_cookies_btn {
+        margin-top: 28px;
+        display: flex;
+        justify-content: flex-end;
+        & > span {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border-radius: 30px;
+            background: #560bad;
+            height: 30px;
+            padding: 0 41px;
+            color: #fff;
+            font-family: "Inter-400";
+            font-size: 12px;
+            line-height: 15px;
+        }
+    }
+}

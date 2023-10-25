@@ -1,0 +1,59 @@
+{
+    "name": "masq-panel",
+    "productName": "MASQ Panel",
+    "version": "1.0.0",
+    "description": "MASQ Panel - antidetect system",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "concurrently \"cd src/front && npm run start \" \"electron-forge start\"",
+        "build": "cd src/front && npm run build && cd ../.. && electron-forge package",
+        "build2": "electron-forge make -p win32",
+        "start_electron": "electron-forge start",
+        "start_front": "cd src/front && npm run start ",
+        "build_front": "cd src/front && npm run build",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish",
+        "lint": "echo \"No linting configured\""
+    },
+    "build": {
+        "publish": [
+            {
+                "provider": "github",
+                "owner": "sargishakobyann97",
+                "repo": "masqAppVerssions"
+            }
+        ]
+    },
+    "keywords": [],
+    "author": {
+        "name": "MASQ",
+        "email": "masqad@masqad.com"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@types/react": "^18.2.7",
+        "@types/react-dom": "^18.2.4",
+        "adm-zip": "^0.5.10",
+        "electron-first-run": "^3.0.0",
+        "electron-is-dev": "^2.0.0",
+        "electron-log": "^5.0.0",
+        "electron-node-config": "^1.1.0",
+        "electron-squirrel-startup": "^1.0.0",
+        "electron-store": "^8.1.0",
+        "electron-updater": "^6.1.4",
+        "fs-extra": "^10.1.0",
+        "lodash": "^4.17.21",
+        "request": "^2.88.2"
+    },
+    "devDependencies": {
+        "@electron-forge/cli": "^6.0.0-beta.68",
+        "@electron-forge/maker-deb": "^6.0.0-beta.68",
+        "@electron-forge/maker-dmg": "^6.0.4",
+        "@electron-forge/maker-rpm": "^6.0.0-beta.68",
+        "@electron-forge/maker-squirrel": "^6.0.0-beta.68",
+        "@electron-forge/maker-zip": "^6.0.0-beta.68",
+        "electron": "^22.0.0",
+        "electron-builder": "^24.6.4"
+    }
+}

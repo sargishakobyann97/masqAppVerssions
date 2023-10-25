@@ -1,0 +1,70 @@
+@import "../../../assets/mixins/mixins.scss";
+
+.settings_wrapper {
+    @include size(100%, 100vh);
+    @include flexStartStart();
+    gap: 40px;
+    padding: 30px 10% 20px 20px;
+    .settings_left_side {
+        @include flColStart();
+        width: 110px;
+        gap: 107px;
+        margin-top: 2px;
+        & > h2 {
+            @include font(28px, normal, "Inter-400", #292929);
+            font-weight: 400;
+        }
+        .settings_main_nav {
+            @include flColStart();
+            width: 102px;
+            gap: 22px;
+            & > li {
+                list-style: none;
+                & > a {
+                    @include font(14px, normal, "Inter-400", #808080);
+                    font-weight: 400;
+                    text-decoration: none;
+                }
+                .active {
+                    color: var(--m-c);
+                }
+            }
+        }
+    }
+    .settings_right_side {
+        width: 100%;
+        @include flColStart();
+        align-items: flex-end;
+        gap: 105px;
+        .settings_input_place {
+            margin-top: 5px;
+            position: relative;
+            align-self: flex-start;
+            & > svg {
+                position: absolute;
+                left: 7px;
+                top: 9px;
+                color: #808080;
+            }
+            .settings_input {
+                @include size(257px, 30px);
+                @include font(10px, normal, "Inter-400", #808080);
+                @include flexCenterStart();
+                font-weight: 400;
+                outline: none;
+                border: 1px solid #808080;
+                background: #fff;
+                border-radius: 5px;
+                padding: 0 10px 0 25px;
+            }
+        }
+        .settings_main_wrapper {
+            width: 100%;
+            .settings_main_outlet {
+                width: 100%;
+                align-self: flex-end;
+                @include flexStartStart();
+            }
+        }
+    }
+}

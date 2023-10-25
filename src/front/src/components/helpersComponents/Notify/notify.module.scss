@@ -1,0 +1,120 @@
+.notify_main_wrapper {
+    position: fixed;
+    z-index: 100;
+    top: 24px;
+    right: 0;
+    width: 0;
+
+    .notify_main_container {
+        position: relative;
+        right: -20px;
+        width: 330px;
+        height: 58px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        cursor: pointer;
+
+        .notification_color_container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 16px;
+            height: 100%;
+
+            .notification_color_duration {
+                position: absolute;
+                width: 16px;
+                left: 0;
+                bottom: 0;
+                height: 100%;
+                background-color: rgba(252, 234, 42, 0.265);
+                animation-name: notify_duration_anm;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+        }
+
+        .close_notify_btn {
+            color: #292929;
+            position: absolute;
+            top: 18px;
+            right: 16px;
+            font-weight: 100;
+            width: 20px;
+            height: 20px;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+        .notify_messages_wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2px;
+            width: 250px;
+            margin-left: 36px;
+            height: 100%;
+            & > p {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-family: "Inter-400";
+            }
+        }
+        .notify_title {
+            color: #292929;
+            font-size: 13px;
+            line-height: 18px;
+        }
+
+        .notify_sub_title {
+            color: #808080;
+            font-size: 11px;
+            line-height: 15px;
+        }
+    }
+
+    .show_notify {
+        animation-name: notify_show_anm;
+        animation-iteration-count: 1;
+        animation-duration: 300ms;
+        animation-fill-mode: forwards;
+    }
+
+    .hide_notify {
+        animation-name: notify_hide_anm;
+        animation-iteration-count: 1;
+        animation-duration: 200ms;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes notify_show_anm {
+    0% {
+        right: -20px;
+    }
+    100% {
+        right: 350px;
+    }
+}
+
+@keyframes notify_hide_anm {
+    0% {
+        right: 350px;
+    }
+    100% {
+        right: -20px;
+    }
+}
+
+@keyframes notify_duration_anm {
+    0% {
+        height: 100%;
+    }
+    100% {
+        height: 0;
+    }
+}

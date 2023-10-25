@@ -1,0 +1,23 @@
+{
+    "apps": {
+        "domain": "https://apps.masqad.com",
+        "packages": {
+            "browser": {
+                "name": "masq_browser",
+                "version": "v1.1.1",
+                "format": "zip"
+            },
+            "agent": {
+                "name": "browser_agent",
+                "version": "v1.0.0",
+                "format": "zip"
+            }
+        }
+    },
+    "agent_manifest": {
+        "name": "com.masqad.app",
+        "description": "MASQ browser native messaging agent",
+        "type": "stdio",
+        "allowed_extensions": ["masq@masqad.com"]
+    }
+}

@@ -1,0 +1,12 @@
+@import "../../../../../assets/mixins/mixins.scss";
+
+.search_modal_wrapper {
+    @include size(100%, 100vh);
+    @include flexCenter();
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 9;
+}

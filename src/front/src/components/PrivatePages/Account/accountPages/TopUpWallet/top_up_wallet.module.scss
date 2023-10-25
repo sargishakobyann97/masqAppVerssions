@@ -1,0 +1,79 @@
+@import "../../../../../assets/mixins/mixins.scss";
+
+.top_up_wrapper {
+    @include size(100%, 100vh);
+    @include flexStartStart();
+    .top_up_wrapper_main {
+        @include flColStart();
+        width: calc(100% - 94px);
+        max-width: 770px;
+        height: 100%;
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+        .top_up_text_btn_wrapper {
+            @include flColStart();
+            width: 100%;
+            gap: 28px;
+            margin-top: 88px;
+            .top_up_text {
+                @include flColStart();
+                gap: 10px;
+                & > h2 {
+                    @include font(20px, normal, "Inter-400", #292929);
+                    font-weight: 400;
+                    line-height: 20px;
+                }
+                & > p {
+                    @include font(12px, normal, "Inter-400", #808080);
+                    font-weight: 400;
+                    line-height: 15px;
+                }
+            }
+            .top_up_btn_wrapper {
+                @include flColStart();
+                gap: 20px;
+                width: calc(100% - 280px);
+                .top_up_btn {
+                    @include size(100%, 60px);
+                    @include flexCenterBetween();
+                    border-radius: 8px;
+                    background: #fff;
+                    box-shadow: -0.5px 0.5px 5px 0px rgba(0, 0, 0, 0.3);
+                    transition-duration: 200ms;
+                    padding: 0 24px;
+                    border: 1.5px solid transparent;
+                    &:hover {
+                        border-color: var(--m-c);
+                    }
+                    & > span:nth-child(1) {
+                        @include font(18px, normal, "Inter-400", #292929);
+                        font-weight: 400;
+                    }
+                    & > span:nth-child(2) {
+                        @include font(14px, normal, "Inter-400", var(--m-c));
+                        font-weight: 400;
+                        cursor: pointer;
+                    }
+                    .top_up_btn_custom_price {
+                        @include flexCenterBetween();
+                        gap: 16px;
+                        & > span {
+                            @include font(18px, normal, "Inter-400", #292929);
+                            font-weight: 400;
+                        }
+                        & > input {
+                            @include flexCenterStart();
+                            @include size(155px, 36px);
+                            @include font(14px, normal, "Inter-400", #808080);
+                            font-weight: 400;
+                            padding-left: 12px;
+                            border-radius: 6px;
+                            border: 1px solid #808080;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

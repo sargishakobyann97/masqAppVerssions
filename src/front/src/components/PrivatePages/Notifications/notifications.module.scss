@@ -1,0 +1,242 @@
+@import "../../../assets/mixins/mixins.scss";
+
+.notifications_wrapper {
+    @include size(100%, 100vh);
+    padding: 44px 0 0 0px;
+    .main_central {
+        @include size(100%, 100%);
+        @include flColStart();
+        gap: 57px;
+        .up_notification {
+            @include flColStart();
+            padding-left: 20px;
+            min-width: 725px;
+            max-width: 1220px;
+            width: 69vw;
+            gap: 16px;
+            .header {
+                @include font(28px, normal, "Inter-400", #292929);
+                height: 20px;
+                line-height: 16px;
+            }
+            .notifications_filter_and_read_all {
+                @include flexCenterBetween();
+                @include size(100%, 12px);
+                margin-top: 5px;
+                .notifications_filter {
+                    & * {
+                        @include font(16px, normal, "Inter-400", #808080);
+                        text-transform: capitalize;
+                        background: none;
+                    }
+                }
+                .notifications_read_all {
+                    @include size(120px, 100%);
+                    @include flexCenterBetween();
+                    border: none;
+                    background: transparent;
+                    cursor: pointer;
+                    & svg {
+                        font-size: large;
+                        color: var(--m-c);
+                    }
+                    & span {
+                        @include font(12px, normal, "Inter-400", var(--m-c));
+                    }
+                }
+
+                .notifications_read_all_disabled {
+                    @include size(120px, 100%);
+                    @include flexCenterBetween();
+                    border: none;
+                    background: transparent;
+                    cursor: pointer;
+                    & svg {
+                        font-size: large;
+                        color: gray;
+                    }
+                    & span {
+                        @include font(12px, normal, "Inter-400", gray);
+                    }
+                }
+            }
+        }
+        .all_notifications {
+            @include flColStart();
+            padding-left: 20px;
+            width: 100%;
+            overflow-y: auto;
+            padding-bottom: 40px;
+            gap: 20px;
+            .notification_item {
+                @include flColStart();
+                gap: 20px;
+                // padding: 0 6px 0 9px;
+                .notification_date {
+                    @include font(16px, normal, "Inter-400", #000);
+                    margin-bottom: 6px;
+                }
+
+                .invites_notify {
+                    @include flexStartStart();
+                    overflow: hidden;
+                    position: relative;
+                    min-width: 725px;
+                    max-width: 1200px;
+                    width: 69vw;
+                    height: 83px;
+                    border-radius: 16px;
+                    background: #fff;
+                    box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+                    padding: 16px 24px 16px 24px;
+                    transition-duration: 200ms;
+
+                    &:hover {
+                        transform: scale(1.01);
+                    }
+
+                    .invite_color {
+                        background-color: var(--m-c);
+                        width: 24px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                    }
+
+                    .invite_title {
+                        color: #292929;
+                        font-family: "Inter-400";
+                        font-size: 16px;
+                        position: absolute;
+                        top: 20px;
+                        left: 52px;
+                    }
+
+                    .invite_sub_title {
+                        color: #808080;
+                        position: absolute;
+                        font-family: "Inter-400";
+                        font-size: 12px;
+                        font-weight: 400;
+                        bottom: 25px;
+                        left: 52px;
+                        & > span:not(span:nth-of-type(2)) {
+                            color: var(--m-c);
+                        }
+                    }
+
+                    .invite_button {
+                        height: 27px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 15px;
+                        background: var(--m-c);
+                        min-width: 130px;
+                        padding: 0 30px;
+                        position: absolute;
+                        right: 43px;
+                        top: 28px;
+                        color: #fff;
+                        font-family: "Inter-500";
+                        font-size: 12px;
+                        font-weight: 500;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+
+                .notification {
+                    @include flexStartStart();
+                    overflow: hidden;
+                    min-width: 725px;
+                    max-width: 1200px;
+                    max-height: 83px;
+                    width: 69vw;
+                    border-radius: 16px;
+                    background: #fff;
+                    box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+                    padding: 16px 24px 16px 24px;
+                    transition-duration: 300ms;
+                    cursor: pointer;
+                    &:hover {
+                        transform: scale(1.01);
+                    }
+                    .notification_main {
+                        @include flexStartStart();
+                        width: 100%;
+                        min-height: 51px;
+                        gap: 32px;
+                        & img {
+                            @include size(51px, 51px);
+                            object-fit: cover;
+                        }
+                        .notification_text_place {
+                            @include flColStart();
+                            width: 480px;
+                            min-height: 33px;
+                            gap: 8px;
+                            margin-top: 6px;
+                            flex-grow: 1;
+                            .notification_header {
+                                @include font(16px, normal, "Inter-400", #292929);
+                                @include flexCenter();
+                                position: relative;
+                                line-height: 15px;
+                                & span:nth-of-type(2) {
+                                    @include font(10px, normal, "Inter-400", var(--m-c));
+                                    position: absolute;
+                                    right: -34px;
+                                }
+                            }
+                            .notification_text_readMore {
+                                @include font(12px, normal, "Inter-400", #808080);
+                                width: 100%;
+                                min-height: 12px;
+                                gap: 5px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                            .notification_text_readMore.active {
+                                text-overflow: clip;
+                                overflow: visible;
+                                white-space: normal;
+                            }
+                        }
+                        .notification_btn {
+                            @include size(120px, 51px);
+                            @include flexCenter();
+                            background: none;
+                            border: none;
+                            & p {
+                                @include size(120px, 27px);
+                                @include font(12px, normal, "Inter-500", #fff);
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                padding: 0 13px;
+                                text-decoration: none;
+                                background-color: var(--m-c);
+                                border-radius: 15px;
+                                text-align: center;
+                                line-height: 27px;
+                            }
+                        }
+                    }
+                }
+
+                .active_e {
+                    max-height: 200px;
+                    padding-bottom: 21px;
+                }
+            }
+        }
+    }
+}
+
+.filter_item {
+    @include font(16px, normal, "Inter-400", #808080);
+    text-transform: capitalize;
+}

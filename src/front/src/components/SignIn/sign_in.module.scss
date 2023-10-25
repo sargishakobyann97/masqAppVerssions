@@ -1,0 +1,108 @@
+@import "../../assets/mixins/mixins.scss";
+
+.sign_in_wrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../assets/images/main_bg_img.jpg");
+    background-size: 100% 100vh;
+    display: flex;
+    position: fixed;
+    & * {
+        font-family: "Inter-400" !important;
+    }
+
+    & > div {
+        width: 50%;
+    }
+
+    .masq_logo_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > div {
+            height: 442px;
+        }
+    }
+
+    .sign_in_content_wrapper {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .sign_in_form_wrapper {
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            & div:nth-child(4) input {
+                margin-top: 1px;
+            }
+            & label:nth-of-type(2) {
+                margin-top: 21px;
+            }
+            .sign_in_password_inp,
+            .sign_in_email_or_name_inp {
+                & * {
+                    border-radius: 10px !important;
+                }
+                margin-bottom: 24px;
+            }
+            .sign_in_password_inp {
+                margin-bottom: 12px;
+            }
+            & > label {
+                margin-bottom: 9px;
+                font-size: 14px;
+                color: #292929;
+            }
+            .sign_in_title {
+                font-weight: 400;
+                font-size: 28px;
+                margin-bottom: 31px;
+                color: #292929;
+            }
+            .sign_in_error_message {
+                @include font(14px, normal, "Inter-400", rgba(229, 0, 0, 0.75));
+                font-weight: 400;
+                margin-bottom: 34px;
+            }
+            .forgot_password_wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & p,
+                & span {
+                    cursor: pointer;
+                    color: var(--m-c);
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 15px;
+                    font-family: "Inter-500" !important;
+                }
+            }
+            .sign_in_btn {
+                margin-top: 16px;
+                background: var(--m-c);
+                color: #ffffff;
+                border-radius: 10px;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+            .have_an_account_wrapper {
+                margin-top: 20px;
+                font-size: 14px;
+                display: flex;
+                justify-content: center;
+                gap: 16px;
+                color: #808080;
+                & > a {
+                    color: var(--m-c);
+                    font-family: "Inter-500" !important;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

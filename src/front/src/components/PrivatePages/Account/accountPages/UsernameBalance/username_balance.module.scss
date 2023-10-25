@@ -1,0 +1,64 @@
+@import "../../../../../assets/mixins/mixins.scss";
+
+.user_name_balance {
+    @include flexCenterEnd();
+    align-self: flex-end;
+    gap: 10px;
+    margin-top: 40px;
+    position: relative;
+    cursor: pointer;
+    .user_name {
+        @include font(20px, normal, "Inter-400", #292929);
+        font-weight: 400;
+    }
+    .user_balance {
+        @include font(16px, normal, "Inter-400", #808080);
+        font-weight: 400;
+    }
+    .user_more_item_logo {
+        @include flexCenter();
+        @include size(14px, 14px);
+    }
+    .account_more_options_wrapper {
+        position: absolute;
+        width: 217px;
+        border-radius: 5px;
+        background: #fff;
+        box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.25);
+        top: 40px;
+        padding: 12px 0 12px 0;
+        z-index: 8;
+        & > div {
+            & > a,
+            button {
+                @include size(100%, 25px);
+                @include flexCenterStart();
+                @include font(12px, normal, "Inter-500", #292929);
+                background: #fff;
+                border: none;
+                font-weight: 500;
+                padding-left: 17px;
+                text-decoration: none;
+                cursor: pointer;
+                transition-duration: 200ms;
+                &:hover {
+                    background: var(--m-c);
+                    color: #fff;
+                }
+                &:nth-child(1) svg {
+                    margin-left: 2px;
+                }
+                &:nth-child(4) svg {
+                    margin-left: 2px;
+                }
+                .account_more_icons {
+                    @include flexCenterStart();
+                    width: 25px;
+                    & > svg {
+                        transition-duration: 200ms;
+                    }
+                }
+            }
+        }
+    }
+}

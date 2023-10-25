@@ -1,0 +1,98 @@
+@import "../../assets/mixins/mixins.scss";
+.sign_up_wrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../assets/images/main_bg_img.jpg");
+    background-size: 100% 100vh;
+    display: flex;
+    position: fixed;
+    & * {
+        font-family: "Inter-400" !important;
+    }
+
+    & > div {
+        width: 50%;
+    }
+
+    .masq_logo_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > div {
+            height: 442px;
+        }
+    }
+
+    .sign_up_content_wrapper {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .sign_up_form_wrapper {
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            .sign_up_title {
+                font-weight: 400;
+                font-size: 28px;
+                margin-bottom: 30px;
+                color: #292929;
+            }
+            & .sign_up_inputs:nth-of-type(1) {
+                & input {
+                    margin-top: 1px;
+                }
+            }
+            .sign_up_inputs {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 24px;
+                position: relative;
+                & > label {
+                    margin-bottom: 12px;
+                    font-size: 14px;
+                    color: #292929;
+                }
+            }
+            .sign_up_checkbox_for_receive_news {
+                display: flex;
+                height: 24px;
+                & > label {
+                    @include font(12px, normal, "Inter-500", #292929);
+                    font-weight: 500;
+                    width: 319px;
+                    line-height: 13px;
+                    margin-top: 3px;
+                }
+            }
+            .next_btn {
+                margin-top: 36px;
+                background: var(--m-c);
+                color: #ffffff;
+                border-radius: 10px;
+                height: 45px;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                &:disabled {
+                    background: #808080;
+                }
+            }
+            .already_have_an_account_wrapper {
+                margin-top: 24px;
+                font-size: 14px;
+                display: flex;
+                justify-content: center;
+                gap: 16px;
+                color: #808080;
+                & > a {
+                    color: var(--m-c);
+                    font-family: "Inter-500" !important;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

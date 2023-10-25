@@ -1,0 +1,118 @@
+@import "../../../../../../assets/mixins/mixins.scss";
+
+.top_up_payment_main_wrapper {
+    @include flColStart();
+    @include size(100%, 100%);
+    gap: 27px;
+    margin-top: 46px;
+    .back_btn {
+        display: flex;
+        align-items: baseline;
+        text-decoration: none;
+        gap: 6px;
+        color: #292929;
+        transition-duration: 200ms;
+        background: none;
+        border: none;
+        cursor: pointer;
+        & > svg {
+            @include size(10px, 10px);
+            color: inherit;
+            padding-top: 1px;
+            transition-duration: 200ms;
+        }
+        & > span {
+            @include font(12px, normal, "Inter-400", inherit);
+            font-weight: 400;
+            transition-duration: 200ms;
+        }
+        &:hover {
+            color: var(--m-c);
+        }
+    }
+    .top_up_payment_wrapper {
+        @include flColStart();
+        @include size(100%, 100%);
+        background-color: #fff;
+        gap: 40px;
+        .top_up_payment_header {
+            @include flexCenterBetween();
+            width: 100%;
+            .top_up_payment_header_info {
+                @include flColStart();
+                gap: 8px;
+                & > h2 {
+                    @include font(20px, normal, "Inter-400", #292929);
+                    font-weight: 400;
+                }
+                & > p {
+                    @include font(12px, normal, "Inter-400", #808080);
+                    font-weight: 400;
+                }
+            }
+        }
+        .payment_wrapper {
+            @include flColStart();
+            @include size(100%, 100%);
+            gap: 24px;
+            .top_up_payment_info_and_qr {
+                @include flexCenterStart();
+                width: 100%;
+                height: calc(100% - 261px);
+                max-height: 180px;
+                gap: 32px;
+                .top_up_payment_info {
+                    @include flColStart();
+                    gap: 32px;
+                    width: calc(100% - 288px);
+                    height: calc(100vh - 496px);
+                    max-height: 180px;
+                    padding: 20px 39px 24px 24px;
+                    border-radius: 10px;
+                    background: #fff;
+                    box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.3);
+                    & > h2 {
+                        @include flexCenterBetween();
+                        @include font(18px, normal, "Inter-500", #292929);
+                        font-weight: 500;
+                        width: 100%;
+                        & > span {
+                            text-transform: capitalize;
+                        }
+                    }
+                    .info_lists {
+                        @include flColStart();
+                        gap: 6px;
+                        width: 100%;
+                        & > li {
+                            @include font(12px, normal, "Inter-400", #808080);
+                            font-weight: 400;
+                            list-style-type: disc;
+                            list-style-position: inside;
+                        }
+                    }
+                }
+                .top_up_payment_qr {
+                    @include flexCenter();
+                    width: 21.8%;
+                    height: 100%;
+                    max-height: 180px;
+                    border-radius: 10px;
+                    border: 1px solid #d9d9d9;
+                }
+            }
+            .top_up_payment_pay_online {
+                @include flexCenter();
+                @include font(18px, normal, "Inter-400", #fff);
+                font-weight: 400;
+                width: calc(100% - 291px);
+                height: 50px;
+                border-radius: 10px;
+                background: #58029f;
+                cursor: pointer;
+                border: none;
+                text-decoration: none;
+            }
+        }
+    }
+}

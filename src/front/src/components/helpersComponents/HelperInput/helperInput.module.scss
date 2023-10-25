@@ -1,0 +1,123 @@
+@import "../../../assets/mixins/mixins.scss";
+
+.border {
+    width: 350px;
+    position: relative;
+    border: 1.5px solid #808080;
+    border-radius: 12px;
+    height: 46.5px;
+
+    .error_info {
+        @include flexCenter();
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -41px;
+        height: 30px;
+        width: 30px;
+        color: red;
+        border-radius: 50%;
+        z-index: 5;
+        cursor: pointer;
+        & p {
+            position: absolute;
+            bottom: -40px;
+            left: -17px;
+            display: none;
+            min-height: 30px;
+            padding: 0 5px;
+            border-radius: 5px;
+            & > span {
+                @include font(12px, normal, "Inter-400", #808080);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                background-color: #fff;
+                box-shadow: -1px 5px 5px 0px rgba(0, 0, 0, 0.3);
+                padding: 7px 5px 0;
+                white-space: nowrap;
+                border-radius: 5px;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 3;
+            }
+            &:hover {
+                display: block;
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                width: 20px;
+                height: 20px;
+                box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+                border-radius: 3px;
+                top: -10px;
+                left: 22px;
+                transform: rotate(45deg);
+                background-color: #fff;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                width: 25px;
+                height: 28px;
+                background-color: white;
+                border-radius: 3px;
+                top: -9px;
+                left: 19px;
+                transform: rotate(45deg);
+            }
+        }
+
+        & svg:hover + p {
+            display: block;
+        }
+    }
+
+    .inp {
+        @include font(14px, normal, "Inter-400", #292929);
+        color: #333;
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        height: calc(100% - 0.5px);
+        padding: 0 5px 0 5px;
+        position: relative;
+        z-index: 2;
+        &:disabled {
+            background-color: #8080802a;
+        }
+    }
+    & [data-type="password"] {
+        padding: 0 50px 0 5px;
+    }
+
+    .animation_border {
+        border-radius: 12px;
+        z-index: 1;
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: calc(100% + 3.5px);
+        background-color: red;
+        transition: 0.4s;
+    }
+
+    .active {
+        width: calc(100% + 4px);
+        left: -2px;
+    }
+
+    .visibility_wrapper {
+        position: absolute;
+        top: 25%;
+        right: 16px;
+        z-index: 4;
+        cursor: pointer;
+        color: #808080;
+    }
+}

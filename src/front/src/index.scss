@@ -1,0 +1,74 @@
+@import url("./assets/fonts/fonts.scss");
+@import url("./assets/profilesFoldersIcons/icon.scss");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    &:not(.vi, input)::selection {
+        background-color: #00000000;
+        color: inherit;
+    }
+}
+
+:root {
+    --m-c: #560bad;
+}
+
+.temporary {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-family: "Play-400";
+    white-space: nowrap;
+    color: red;
+}
+
+body {
+    overflow: hidden;
+}
+
+svg * {
+    pointer-events: none;
+}
+
+/* width */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #00000000;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #6246ea;
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #4631b3;
+}
+
+.swiper {
+    height: 190px;
+}
+.swiper-wrapper {
+    height: 160px !important;
+    border-radius: 15px !important;
+}
+.swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 10px;
+    & > span {
+        width: 50px;
+        height: 10px;
+        border-radius: 10px;
+    }
+}

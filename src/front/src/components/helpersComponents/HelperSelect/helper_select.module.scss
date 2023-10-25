@@ -1,0 +1,24 @@
+@import "../../../assets/mixins/mixins.scss";
+
+.flag {
+    @include size(18px, 16px);
+    @include flexCenter();
+    object-fit: contain;
+}
+.select_place {
+    & > div {
+        display: flex !important;
+        gap: 16px;
+    }
+}
+.item {
+    transition: 200ms;
+}
+.item:hover {
+    color: #fff;
+    background: var(--m-c) !important;
+}
+.helper_select_item_text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

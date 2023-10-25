@@ -1,0 +1,260 @@
+@import "../../../../../assets/mixins/mixins.scss";
+
+.tfa_wrapper {
+    @include size(100%, 100vh);
+    @include flexCenter();
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.15);
+    & * {
+        font-family: "Inter-400" !important;
+    }
+    .tfa_main_wrapper {
+        @include flColCenterStart();
+        width: 442px;
+        border-radius: 16px;
+        box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+        .tfa_close_icon {
+            @include flexCenter();
+            @include size(14px, 14px);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            & > svg {
+                @include size(18px, 18px);
+                color: #ffffffbe;
+            }
+        }
+        .tfa_icon_place {
+            @include size(100%, 139px);
+            @include flexCenter();
+            background: #4c85f6;
+            & > img {
+                @include size(74px, 74px);
+                object-fit: contain;
+            }
+        }
+        .tfa_info_place {
+            @include flColCenterStart();
+            margin: 32px 0 30px 0;
+            width: calc(100% - 50px);
+            .tfa_header {
+                @include font(18px, normal, "Inter-500", #292929);
+                font-weight: 500;
+                align-self: flex-start;
+                line-height: 14px;
+            }
+            .tfa_docs {
+                @include flColStart();
+                margin-top: 28px;
+                & > li {
+                    @include font(14px, normal, "Inter-400", #808080);
+                    padding-left: 15px;
+                    margin-left: 4px;
+                    list-style: none;
+                    font-weight: 400;
+                    list-style-position: inside;
+                    position: relative;
+                    line-height: 20px;
+                    &:before {
+                        content: "•";
+                        position: absolute;
+                        border-radius: 50%;
+                        left: 0;
+                    }
+                }
+            }
+            .tfa_code_place {
+                @include flexCenter();
+                width: 100%;
+                margin-top: 24px;
+                .tfa_qr_code {
+                    @include flColCenterStart();
+                    background-color: #fff;
+                    border-radius: 10px;
+                    width: 157px;
+                    gap: 4px;
+                    margin-bottom: 33px;
+                    .tfa_qr_img_wrapper {
+                        @include flexCenter();
+                        height: 154px;
+                        & > img {
+                            @include flexCenter();
+                            width: 137px;
+                            height: 134px;
+                            object-fit: contain;
+                        }
+                    }
+                    & > button {
+                        @include font(14px, normal, "Inter-500", #4c85f6);
+                        @include flexCenter();
+                        border: none;
+                        background: none;
+                        font-weight: 500;
+                        cursor: pointer;
+                    }
+                }
+                .tfa_security_key_wrapper {
+                    @include flexCenterBetween();
+                    padding-right: 16px;
+                    width: 100%;
+                    margin: 16px 0 35px 0;
+                    .tfa_security_key {
+                        @include flexCenterStart();
+                        gap: 10px;
+                        & > p {
+                            @include font(20px, normal, "Inter-400", #000);
+                            font-weight: 300;
+                        }
+                        .tfa_copy_icon {
+                            @include flexCenter();
+                            position: relative;
+                            cursor: pointer;
+                            & > svg {
+                                color: #808080;
+                                width: 15px;
+                            }
+                            .copied {
+                                @include font(10px, normal, "Inter-400", #808080);
+                                position: absolute;
+                                bottom: -15px;
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                    & > button {
+                        @include font(12px, normal, "Inter-500", #4c85f6);
+                        background: none;
+                        border: none;
+                        font-weight: 500;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .tfa_btn_place {
+                @include flexCenterBetween();
+                margin-top: 35px;
+                width: 100%;
+                & > button {
+                    @include font(14px, normal, "Inter-400", #4c85f6);
+                    font-weight: 400;
+                    border: none;
+                    background: none;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+            }
+            .tfa_verify_page {
+                @include flColCenterStart();
+                width: 100%;
+                margin-top: 28px;
+                .tfa_verify_text {
+                    @include font(14px, normal, "Inter-400", #808080);
+                    align-self: flex-start;
+                    line-height: 20px;
+                }
+                .tfa_verify_code_place {
+                    margin-top: 36px;
+                }
+                .tfa_verify_btn {
+                    @include flexCenterStart();
+                    gap: 28px;
+                    margin-top: 15px;
+                    .tfa_verify_save {
+                        @include size(177px, 42px);
+                        @include font(14px, normal, "Inter-400", #fff);
+                        border-radius: 5px;
+                        background: #4c85f6;
+                        border: none;
+                        cursor: pointer;
+                        &:disabled {
+                            background: #808080;
+                        }
+                    }
+                    .tfa_veirfy_page_cancel {
+                        @include font(14px, normal, "Inter-400", #4c85f6);
+                        cursor: pointer;
+                        border: none;
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.vi__wrapper input::placeholder {
+    color: #fff !important;
+    background: #fff !important;
+}
+
+.vf_container {
+    width: 200px;
+}
+
+.vf_character {
+    border: 1px solid #e8ebed;
+    border-radius: 5px !important;
+    font-size: 14px;
+    text-transform: uppercase;
+    height: 30px;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vf_character.active {
+    border-color: rgba(229, 0, 0, 0.6) !important;
+    background: rgba(229, 0, 0, 0.05);
+    animation: shake 0.7s forwards;
+}
+.vf_character_selected {
+    outline-color: var(--m-c);
+    color: var(--m-c);
+}
+
+.vf_character_inactive {
+    background-color: #fff;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(10deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(-10deg);
+    }
+    40% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(0);
+    }
+    70% {
+        transform: rotate(-10deg);
+    }
+    80% {
+        transform: rotate(0);
+    }
+    90% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}

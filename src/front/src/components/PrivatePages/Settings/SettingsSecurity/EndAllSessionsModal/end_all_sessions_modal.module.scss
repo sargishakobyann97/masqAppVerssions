@@ -1,0 +1,74 @@
+@import "../../../../../assets/mixins/mixins.scss";
+
+.end_all_sessions_wrapper {
+    @include size(100vw, 100vh);
+    @include flexCenter();
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.15);
+    .end_all_sessions_main_wrapper {
+        @include flColCenterStart();
+        position: relative;
+        width: 320px;
+        padding: 24px;
+        background: #fff;
+        box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+        border-radius: 16px;
+        .end_all_sessions_close_btn {
+            @include size(14px, 14px);
+            @include flexCenter();
+            position: absolute;
+            cursor: pointer;
+            top: 20px;
+            right: 20px;
+            & > svg {
+                @include size(14px, 14px);
+                color: #808080;
+            }
+        }
+        .sessions_icon_text {
+            @include flColCenterStart();
+            width: 100%;
+            & > img {
+                @include size(82px, 84px);
+                @include flexCenter();
+                object-fit: contain;
+            }
+            & > h2 {
+                @include font(18px, normal, "Inter-500", #292929);
+                font-weight: 500;
+                margin-top: 17px;
+            }
+            & > p {
+                @include font(14px, normal, "Inter-400", #808080);
+                font-weight: 400;
+                margin-top: 9px;
+            }
+        }
+        .sessions_btns {
+            @include flColCenterStart();
+            gap: 17px;
+            margin-top: 20px;
+            .sessions_confirm_btn {
+                @include size(256px, 34px);
+                @include flexCenter();
+                @include font(12px, normal, "Inter-400", #292929);
+                border-radius: 10px;
+                background: #f5f5f5;
+                border: none;
+                font-weight: 400;
+                cursor: pointer;
+            }
+            .sessions_cancel_btn {
+                @include flexCenter();
+                @include font(12px, normal, "Inter-400", #292929);
+                font-weight: 400;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}

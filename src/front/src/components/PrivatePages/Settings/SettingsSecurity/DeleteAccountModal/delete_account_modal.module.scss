@@ -1,0 +1,137 @@
+@import "../../../../../assets/mixins/mixins.scss";
+
+.delete_account_modal_wrapper {
+    @include size(100vw, 100vh);
+    @include flexCenter();
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.15);
+    .delete_account_main_wrapper {
+        @include flColCenterStart();
+        position: relative;
+        width: 320px;
+        padding: 24px;
+        background: #fff;
+        box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+        border-radius: 16px;
+        .delete_account_close_btn {
+            @include size(14px, 14px);
+            @include flexCenter();
+            position: absolute;
+            cursor: pointer;
+            top: 20px;
+            right: 20px;
+            & > svg {
+                @include size(14px, 14px);
+                color: #808080;
+            }
+        }
+        .delete_icon_text {
+            @include flColCenterStart();
+            width: 100%;
+            & > img {
+                @include size(82px, 84px);
+                @include flexCenter();
+                object-fit: contain;
+            }
+            & > h2 {
+                @include font(18px, normal, "Inter-500", #292929);
+                font-weight: 500;
+                margin-top: 17px;
+            }
+            & > p {
+                @include font(14px, normal, "Inter-400", #808080);
+                font-weight: 400;
+                margin-top: 9px;
+            }
+        }
+        .delete_btns {
+            @include flColCenterStart();
+            gap: 17px;
+            margin-top: 20px;
+            .delete_password_input_place {
+                position: relative;
+                .show_password_wrapper {
+                    position: absolute;
+                    top: 9px;
+                    right: 9px;
+                    cursor: pointer;
+                    & > svg {
+                        @include size(16px, 16px);
+                        color: #808080;
+                    }
+                }
+                .delete_password_input {
+                    @include size(256px, 34px);
+                    @include flexCenter();
+                    @include font(10px, normal, "Inter-400", #292929);
+                    text-align: center;
+                    font-weight: 400;
+                    border-radius: 10px;
+                    background: #fff;
+                    border: 1px solid #bcbcbc;
+                }
+                .delete_password_input.active {
+                    animation: shake 0.7s forwards;
+                }
+            }
+
+            .delete_account_delete_btn {
+                @include flexCenter();
+                font-family: "Inter-400";
+                font-size: 12px;
+                font-weight: 400;
+                color: #808080;
+                border: none;
+                cursor: pointer;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: linear-gradient(to right, red, red 50%, #808080 50%);
+                background-size: 200% 100%;
+                background-position: 100%;
+            }
+            .delete_account_delete_btn.active {
+                transition: all 0.3s cubic-bezier(0, 0, 0.23, 1);
+                background-position: 0%;
+            }
+        }
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(1deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(-1deg);
+    }
+    40% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(1deg);
+    }
+    60% {
+        transform: rotate(0);
+    }
+    70% {
+        transform: rotate(-1deg);
+    }
+    80% {
+        transform: rotate(0);
+    }
+    90% {
+        transform: rotate(1deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}

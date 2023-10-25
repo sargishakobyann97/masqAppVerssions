@@ -1,0 +1,72 @@
+@import "../../../assets/mixins/mixins.scss";
+
+.home_wrapper {
+    @include flexStartStart();
+    width: 100%;
+    height: 100vh;
+    padding: 0 94px 51px 0;
+    padding-right: 94px;
+    .home_main {
+        @include flColStart();
+        align-items: center;
+        width: 100%;
+        .home_username_balence {
+            width: 100%;
+            align-self: flex-end;
+            max-width: 1200px;
+            margin-bottom: 90px;
+        }
+        .home_slider_recommended_wrapper {
+            @include flColStart();
+            width: 100%;
+            max-width: 1200px;
+            gap: 32px;
+            .home_slider_wrapper {
+                width: 100%;
+                height: 190px;
+                :global(.swiper-pagination-bullet-active) {
+                    background-color: var(--m-c);
+                }
+            }
+            .home_recommended_wrapper {
+                @include flColStart();
+                gap: 20px;
+                width: 100%;
+                max-width: 1200px;
+                & > h2 {
+                    @include font(18px, normal, "Inter-400", #292929);
+                    font-weight: 400;
+                    line-height: 12px;
+                }
+                .recommended_items {
+                    @include flexStartStart();
+                    width: 100%;
+                    gap: 24px;
+                    .recommended_item {
+                        width: 100%;
+                        height: 190px;
+                        border-radius: 15px;
+                        background: #efefef;
+                        box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.25);
+                    }
+                }
+            }
+        }
+    }
+}
+.mySwiper {
+    width: 100% !important;
+    height: 160px;
+    border-radius: 15px !important;
+}
+.swiper_item {
+    @include font(26px, normal, "Inter-400", #fff);
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 160px !important;
+    overflow: hidden !important;
+    border-radius: 15px;
+    background: #efefef;
+}

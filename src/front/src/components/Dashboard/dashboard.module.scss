@@ -1,0 +1,76 @@
+.dashboard_wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    transition-duration: 200ms;
+    .main_aside {
+        overflow: hidden;
+        position: relative;
+        padding: 30px;
+        // border-right: 1px solid #ededed;
+        & *::selection {
+            background-color: #fff;
+            color: inherit;
+        }
+        .masq_logo_wrapper {
+            margin-bottom: 80px;
+        }
+        .aside_item {
+            display: flex;
+            align-items: center;
+            & a {
+                height: 45px;
+                display: flex;
+                align-items: center;
+                gap: 23px;
+                font-family: "Play-400";
+                font-size: 14px;
+                color: #808080;
+                margin-left: 10px;
+                text-decoration: none;
+                position: relative;
+            }
+
+            .notifications_is_unread_info {
+                display: block;
+                width: 4px;
+                height: 4px;
+                background-color: var(--m-c);
+                border-radius: 50%;
+                position: absolute;
+                top: 12px;
+                right: -8px;
+                // color: var(--m-c);
+            }
+        }
+        .aside_shows_the_app_version {
+            font-size: 10px;
+        }
+        & > p:last-child {
+            width: 100%;
+            white-space: nowrap;
+            color: #808080;
+            font-family: "Play-400";
+            font-size: 12px;
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            & > span {
+                width: 68%;
+                & > span {
+                    display: block;
+                }
+            }
+        }
+    }
+    .main_container {
+        position: relative;
+    }
+}
+
+.selected_aside_item {
+    color: var(--m-c);
+}

@@ -1,0 +1,258 @@
+.new_profile_wrapper {
+    // border: 1px solid red;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    padding-right: 34px;
+
+    .new_profile_header {
+        height: 30px;
+        margin: 36px 0 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .new_profile_header_left_block {
+            display: flex;
+            .create_new_profile_title {
+                color: #292929;
+                font-family: "Inter-400";
+                font-size: 24px;
+                line-height: 32px;
+                text-transform: capitalize;
+                margin-right: 40px;
+            }
+
+            .generate_randomly_profile_btn,
+            .import_profile_btn {
+                border-radius: 30px;
+                background: var(--m-c);
+                height: 30px;
+                padding: 0 27px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                color: #fff;
+                font-family: "Inter-400";
+                font-size: 12px;
+                cursor: pointer;
+                position: relative;
+                transition-duration: 100ms;
+                .import_input {
+                    display: none;
+                }
+                &:active {
+                    transform: scale(0.9);
+                }
+                & *::selection {
+                    background-color: #ffffff00;
+                }
+            }
+
+            .import_profile_btn {
+                & * {
+                    color: #292929;
+                }
+                margin-left: 20px;
+                border: 1px solid #292929;
+                background-color: #fff;
+                color: #292929;
+                font-family: "Inter-400";
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+        .cancel_btn {
+            display: flex;
+            align-items: center;
+            color: #292929;
+            font-family: "Inter-400";
+            font-size: 12px;
+            line-height: 15px;
+            gap: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 5px 0px;
+        }
+    }
+
+    .new_profile_container {
+        width: 100%;
+        height: 530px;
+        max-width: 1400px;
+        position: relative;
+        overflow: hidden;
+        .all_steps_wrapper {
+            border-bottom: 1px solid #e8ebed;
+        }
+        .step_item_zero {
+            position: absolute;
+            height: 45.5px;
+            width: 196px;
+            cursor: pointer;
+            .arrow_img {
+                position: absolute;
+                right: -136px;
+                top: 5px;
+            }
+
+            .step_title {
+                color: #292929;
+                font-family: "Inter-400";
+                font-size: 12px;
+                margin-bottom: 3px;
+            }
+
+            .step_sub_title {
+                color: #808080;
+                font-family: "Inter-400";
+                font-size: 10px;
+            }
+            border-bottom: 1px solid var(--m-c);
+        }
+
+        .new_profile_steps_wrapper {
+            height: 45px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            .step_item {
+                height: 45px;
+                width: 100%;
+                cursor: pointer;
+                .step_title {
+                    color: #808080;
+                    font-family: "Inter-400";
+                    font-size: 12px;
+                    margin-bottom: 3px;
+                }
+
+                .step_sub_title {
+                    color: #808080;
+                    font-family: "Inter-400";
+                    font-size: 10px;
+                }
+            }
+
+            .active_step_item {
+                .step_title {
+                    color: #292929;
+                }
+                border-bottom: 1px solid var(--m-c);
+                box-sizing: content-box;
+            }
+        }
+
+        .selected_properties_wrapper {
+            width: calc(100% - 220px);
+            height: calc(100% - 75px);
+            position: absolute;
+            top: 45px;
+            right: 0;
+
+            .selected_profile_parameters_title {
+                color: #292929;
+                font-family: "Inter-400";
+                font-size: 14px;
+                line-height: 24px;
+                margin: 24px 0 21px 61px;
+            }
+
+            .selected_properties_container {
+                padding-left: 61px;
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                height: 146px;
+                overflow-y: auto;
+                align-content: flex-start;
+
+                & > p {
+                    cursor: pointer;
+                    height: 27px;
+                    border-radius: 20px;
+                    border: 1px solid #292929;
+
+                    padding: 0 16px;
+                    color: #292929;
+                    font-family: "Inter-400";
+                    font-size: 10px;
+                    line-height: 24px;
+                    max-width: 125px;
+
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    border: 1px solid #000000;
+
+                    &:hover {
+                        color: var(--m-c);
+                        border: 1px solid var(--m-c);
+                    }
+                }
+            }
+
+            .user_agent_title {
+                color: #292929;
+                font-family: "Inter-400";
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 24px;
+                margin: 23px 0 5px 61px;
+            }
+
+            .user_agent_textarea {
+                color: #292929;
+                font-family: "Inter-400";
+                font-size: 12px;
+                line-height: 15px;
+                margin-left: 61px;
+                max-width: 502px;
+                min-width: 502px;
+                min-height: 63px;
+                max-height: 100px;
+                height: 63px;
+                flex-shrink: 0;
+                border-radius: 5px;
+                padding: 14px 20px;
+                border: 1px solid #d9d9d9;
+            }
+
+            .create_cancel_btns_wrapper {
+                display: flex;
+                justify-content: flex-end;
+                gap: 22px;
+                margin-top: 48px;
+
+                .cancel_btn,
+                .create_btn {
+                    border-radius: 30px;
+                    border: 1px solid #292929;
+                    color: #292929;
+                    font-family: "Inter-400";
+                    font-size: 12px;
+                    line-height: 15px;
+                    padding: 0 40px;
+                    display: flex;
+                    align-items: center;
+                    height: 30px;
+                    text-decoration: none;
+                    min-width: 120px;
+                }
+
+                .create_btn {
+                    background: #560bad;
+                    color: #fff;
+                    cursor: pointer;
+                    border: none;
+                }
+            }
+        }
+        .steps_main_container {
+            width: 220px;
+        }
+    }
+}

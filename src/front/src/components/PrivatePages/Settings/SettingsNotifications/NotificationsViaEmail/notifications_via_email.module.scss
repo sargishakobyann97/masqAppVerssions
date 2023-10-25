@@ -1,0 +1,69 @@
+@import "../../../../../assets/mixins/mixins.scss";
+
+.via_email_wrapper {
+    @include flColStart();
+    width: 100%;
+    align-self: flex-start;
+    padding: 13px 0px 20px 20px;
+    gap: 32px;
+    .via_email_elements_text_wrapper {
+        @include flColStart();
+        gap: 32px;
+        width: 86.08%;
+        max-width: 1200px;
+        border-radius: 16px;
+        box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+        padding: 20px 24px 4px 24px;
+        .via_email_text_place {
+            @include flColStart();
+            gap: 7px;
+            width: 100%;
+            & > h2 {
+                @include font(14px, normal, "Inter-400", #292929);
+                font-weight: 400;
+            }
+            & > p {
+                @include font(10px, normal, "Inter-400", #808080);
+                font-weight: 400;
+            }
+        }
+        .via_email_elements_place {
+            @include flColStart();
+            width: 100%;
+            gap: 16px;
+            .via_email_element {
+                @include flexStartStart();
+                width: 100%;
+                height: 46px;
+                border-bottom: 1px solid #e8ebed;
+                &:first-child {
+                    height: 29px;
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+                .via_email_element_text_switch {
+                    @include flexCenterBetween();
+                    width: 100%;
+                    .via_email_element_text {
+                        @include flColStart();
+                        gap: 3px;
+                        & > h2 {
+                            @include font(14px, normal, "Inter-400", #292929);
+                            font-weight: 400;
+                        }
+                        & > p {
+                            @include font(10px, normal, "Inter-400", #808080);
+                            font-weight: 400;
+                        }
+                    }
+                    .via_email_element_switch_locker {
+                        @include flexCenterStart();
+                        width: 60px;
+                        gap: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

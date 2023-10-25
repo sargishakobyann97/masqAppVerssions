@@ -1,0 +1,287 @@
+@import "../../../../assets/mixins/mixins.scss";
+
+.folder_page_wrapper {
+    @include size(100%, 100%);
+    @include flColCenterStart();
+    gap: 34px;
+    padding: 35px 0px 38px 0;
+
+    .point_icon {
+        color: #808080;
+        font-size: 12px;
+    }
+
+    .folder_page_header {
+        @include flexStartStart();
+        width: 100%;
+        gap: 53px;
+        max-width: 1200px;
+
+        .folder_icon_div {
+            @include size(110px, 110px);
+            @include flexCenter();
+            border-radius: 10px;
+            box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+            position: relative;
+            cursor: pointer;
+            &::after {
+                width: 45px !important;
+                height: 45px !important;
+            }
+            .all_icon_wrapper {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                z-index: 13;
+                .create_folder_all_icons {
+                    position: absolute;
+                    padding: 15px;
+                    left: 300px;
+                    top: 156px;
+                    display: grid;
+                    grid-template-columns: auto auto auto auto;
+                    background: #fff;
+                    border-radius: 16px;
+                    transform: scale(0);
+                    box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+                    animation: openIconsWrapper 200ms forwards;
+                    & > div {
+                        @include flexCenter();
+                        width: 28px;
+                        height: 28px;
+                        position: relative;
+                        transition-duration: 200ms;
+                        &::after {
+                            width: 18px !important;
+                            height: 18px !important;
+                        }
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+            }
+        }
+        .folder_page_header_wrapper {
+            @include flColStartBetween();
+            min-width: calc(100% - 163px);
+            max-width: 1200px;
+            padding-right: 60px;
+            height: 100%;
+
+            .folder_page_inp_btn_text {
+                @include flexEndBetween();
+                width: 100%;
+                .folder_page_profiles {
+                    @include flColStart();
+                    gap: 15px;
+                    .folder_page_about_profiles {
+                        @include flexCenterStart();
+                        gap: 10px;
+                        & > h2 {
+                            @include font(24px, normal, "Inter-400", #292929);
+                            @include flexCenterStart();
+                            font-weight: 400;
+                            position: relative;
+                            max-width: 300px;
+                            overflow: hidden;
+                        }
+                        .change_name_input {
+                            @include size(130px, 29px);
+                            @include flexCenterStart();
+                            @include font(24px, normal, "Inter-400", #292929);
+                            border: none;
+                            padding-left: 10px;
+                            border-bottom: 1px solid #e8ebed;
+                        }
+                        & > p {
+                            @include font(14px, normal, "Inter-400", #808080);
+                            font-weight: 400;
+                            white-space: nowrap;
+                        }
+                        & > span {
+                            @include font(14px, normal, "Inter-400", #808080);
+                            font-weight: 400;
+                        }
+                    }
+                    .folder_page_btns {
+                        @include flexCenterStart();
+                        gap: 17px;
+                        .create_profile_btn {
+                            @include size(156px, 30px);
+                            @include flexCenter();
+                            @include font(12px, normal, "Inter-400", #fff);
+                            gap: 8px;
+                            font-weight: 400;
+                            border: none;
+                            background-color: var(--m-c);
+                            border-radius: 30px;
+                            cursor: pointer;
+                            text-decoration: none;
+                            & > svg {
+                                @include size(14px, 14px);
+                            }
+                        }
+                        .folder_page_settings {
+                            @include flexCenter();
+                            @include size(30px, 30px);
+                            border-radius: 50%;
+                            border: 1px solid #808080;
+                            position: relative;
+                            & > svg {
+                                width: 30px;
+                                color: #808080;
+                            }
+                        }
+                    }
+                }
+            }
+            .search_profiles_wrapper {
+                @include flColStart();
+                gap: 30px;
+                width: 289px;
+                height: 30px;
+                position: relative;
+                .search_icon {
+                    position: absolute;
+                    color: rgba(0, 0, 0, 0.5);
+                    left: 9px;
+                    top: 4px;
+                    width: 13px;
+                }
+                .search_profiles_input {
+                    @include size(100%, 100%);
+                    @include flexCenterStart();
+                    @include font(12px, normal, "Inter-400", rgba(0, 0, 0, 0.5));
+                    border-radius: 5px;
+                    border: 1px solid rgba(0, 0, 0, 0.5);
+                    background: #fff;
+                    outline: none;
+                    font-weight: 400;
+                    padding: 0 10px 0 28px;
+                }
+            }
+        }
+    }
+    .folder_page_profiles_wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        overflow-y: auto;
+        height: calc(100vh - 220px);
+        position: relative;
+
+        .folder_page_profiles_items_wrapper {
+            max-width: 1200px;
+            width: 100%;
+            padding-right: 60px;
+
+            .not_profile_info {
+                color: #808080;
+                font-family: "inter-400";
+                font-weight: 400;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                animation-name: du_not_profile_anm;
+                opacity: 0;
+                animation-duration: 500ms;
+                animation-delay: 1s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 1;
+            }
+            .folder_page_profiles_item {
+                width: 100%;
+                height: 79px;
+                display: grid;
+                grid-template-columns: 1fr 2.1fr 2.5fr 3fr auto;
+                align-items: center;
+                border-bottom: 1px solid #e8ebed;
+                &:last-child {
+                    border-bottom: none;
+                }
+                & > div {
+                    @include flColStartBetween();
+                }
+                .f_p_run_btn {
+                    @include size(24px, 24px);
+                    @include flexCenter();
+                    border-radius: 50%;
+                    background: var(--m-c);
+                    cursor: pointer;
+                }
+                .f_p_info_header {
+                    @include font(16px, normal, "Inter-400", #292929);
+                    font-weight: 400;
+                    line-height: 14px;
+                    white-space: nowrap;
+                    max-width: 131px;
+                    height: 20px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .f_p_info_text {
+                    @include font(10px, normal, "Inter-400", #808080);
+                    font-weight: 400;
+                    line-height: 22px;
+                    max-width: 135px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .f_p_run_status_btns {
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 170px;
+                    height: 30px;
+                    & > div {
+                        cursor: pointer;
+                    }
+                    .f_p_offline {
+                        @include size(89px, 30px);
+                        @include flexCenter();
+                        @include font(10px, normal, "Inter-400", #808080);
+                        gap: 8px;
+                        border-radius: 20px;
+                        border: 1px solid #808080;
+                        & > span:nth-child(1) {
+                            font-size: 14px;
+                            margin-bottom: 2px;
+                        }
+                    }
+                    .f_p_offline.f_p_running {
+                        border-color: #0f9918;
+                        color: #0f9918;
+                    }
+                    .f_p_settings {
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes openIconsWrapper {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes du_not_profile_anm {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

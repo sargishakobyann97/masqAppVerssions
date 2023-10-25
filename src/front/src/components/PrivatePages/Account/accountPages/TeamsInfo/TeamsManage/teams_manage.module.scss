@@ -1,0 +1,305 @@
+@import "../../../../../../assets/mixins/mixins.scss";
+
+.teams_manage_wrapper {
+    width: 100%;
+    height: 100vh;
+    padding: 52px 187px 52px 94px;
+    overflow-y: auto;
+
+    .point_icon {
+        color: #808080;
+        font-size: 12px;
+    }
+
+    .page_main_info_wrapper {
+        max-width: 800px;
+
+        .manage_team_name_wrapper {
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+            padding: 16px 26px;
+            margin-top: 31px;
+            display: grid;
+            gap: 35px;
+            grid-template-columns: 32px 1fr 100px;
+            align-items: center;
+            .manage_user_logo {
+                @include size(32px, 32px);
+                @include flexCenter();
+                position: relative;
+                border-radius: 50%;
+                background: var(--m-c);
+                & > svg {
+                    @include size(20px, 20px);
+                    color: #fff;
+                }
+            }
+
+            & > input {
+                border: none;
+                outline: none;
+                padding: 5px 0;
+                color: #292929;
+                font-family: "Inter-400";
+                font-size: 14px;
+                line-height: 19px;
+                width: 100%;
+            }
+
+            & > h3 {
+                color: var(--m-c);
+                font-family: "Inter-500";
+                font-size: 10px;
+                font-weight: 500;
+                line-height: 16px;
+                cursor: pointer;
+                padding: 3px 1px;
+            }
+
+            .inp_bottom_border {
+                border-bottom: 1px solid #29292978;
+            }
+        }
+
+        .team_members_wrapper {
+            border-radius: 16px;
+            margin-top: 24px;
+            background: #fff;
+            box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+
+            .team_members_header {
+                position: relative;
+                height: 77px;
+                width: 100%;
+                border-bottom: 1px solid #e8ebed;
+                padding-left: 93px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                & > img {
+                    height: 67%;
+                    position: absolute;
+                    top: 13px;
+                    left: 26px;
+                }
+                & > p {
+                    color: #292929;
+                    font-family: "inter-400";
+                    font-size: 14px;
+                    line-height: 19px;
+                    & > span:not(span:first-child) {
+                        color: var(--m-c);
+                        font-family: "Inter-400";
+                        font-size: 10px;
+                    }
+                }
+
+                & > p:nth-of-type(2) {
+                    color: #808080;
+                    font-size: 10px;
+                }
+            }
+            .manage_user_items_wrapper {
+                padding: 8px 0;
+                .manage_user_item {
+                    padding: 12px 0 12px 26px;
+                    display: grid;
+                    align-items: center;
+                    // justify-content: space-between;
+                    grid-template-columns: 67px 7fr 6fr 125px 45px;
+                    position: relative;
+                    .manage_user_logo {
+                        @include size(32px, 32px);
+                        @include flexCenter();
+                        position: relative;
+                        border-radius: 50%;
+                        background: var(--m-c);
+                        & > svg {
+                            @include size(20px, 20px);
+                            color: #fff;
+                        }
+                        .crown_wrapper {
+                            @include size(13px, 13px);
+                            @include flexCenter();
+                            position: absolute;
+                            border-radius: 50%;
+                            background: #fff;
+                            right: -3px;
+                            bottom: -3px;
+                        }
+                    }
+                    .manage_name_email_wrapper {
+                        max-width: 140px;
+                        & > p {
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            color: #292929;
+                            font-family: "Inter-400";
+                            font-size: 14px;
+                        }
+                        & > p:nth-of-type(2) {
+                            color: #808080;
+                            font-size: 10px;
+                        }
+                    }
+
+                    .manage_data_added_wrapper {
+                        & > p {
+                            @include font(10px, normal, "Inter-400", #292929);
+                            font-weight: 400;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            color: #292929;
+                        }
+                        & > p:nth-of-type(2) {
+                            color: #292929;
+                            font-size: 8px;
+                        }
+                    }
+
+                    .manage_role_wrapper {
+                        height: 25px;
+                        flex-shrink: 0;
+                        background-color: var(--m-c);
+                        cursor: pointer;
+                        position: relative;
+                        color: #fff;
+                        font-family: "Inter-400";
+                        font-size: 10px;
+                        border-radius: 5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0 11px;
+                        width: 112px;
+                        white-space: nowrap;
+                        position: relative;
+                        & svg {
+                            width: 12px;
+                            height: 12px;
+                            pointer-events: none;
+                            position: absolute;
+                            right: 5px;
+                        }
+
+                        & > p {
+                            pointer-events: none;
+                        }
+
+                        .roles_wrapper {
+                            width: 100%;
+                            // height: 80px;
+                            background-color: var(--m-c);
+                            position: absolute;
+                            z-index: 1;
+                            top: 20px;
+                            left: 0;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-end;
+                            align-items: center;
+                            padding-top: 5px;
+                            border-bottom-right-radius: 5px;
+                            border-bottom-left-radius: 5px;
+                            overflow: hidden;
+                            .role_item {
+                                width: 100%;
+                                height: 25px;
+                                transition-duration: 200ms;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                &:hover {
+                                    background-color: #7444ac;
+                                }
+                            }
+                        }
+                    }
+
+                    .manage_item_delete_btn {
+                        color: var(--m-c);
+                        font-family: "Inter-400";
+                        font-size: 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .invite_wrapper {
+            margin-top: 24px;
+            border-radius: 16px;
+            padding: 16px 0 16px 26px;
+            background: #fff;
+            box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+
+            .invite_title {
+                color: #292929;
+                font-family: "Inter-400";
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 19px;
+            }
+            .invite_sub_title {
+                color: #808080;
+                font-family: "Inter-400";
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 12px;
+                margin-top: 3px;
+            }
+
+            .invite_inp_wrapper {
+                @include flexCenterStart();
+                gap: 26px;
+                margin-top: 22px;
+                align-items: center;
+                & > input {
+                    width: calc(100% - 142px);
+                    height: 27px;
+                    border-radius: 4px;
+                    border: 1px solid #560bad;
+                    outline: none;
+                    padding: 0 10px;
+                    color: #808080;
+                    font-family: "Inter-400";
+                    font-size: 10px;
+                    font-weight: 400;
+                }
+
+                & > button {
+                    cursor: pointer;
+                    border: none;
+                    outline: none;
+                    width: 116px;
+                    height: 27px;
+                    border-radius: 4px;
+                    background: #560bad;
+                    color: #fff;
+                    font-family: "Inter-400";
+                    font-size: 10px;
+                    margin-right: 26px;
+                }
+
+                & > p {
+                    color: #292929;
+                    font-family: "Inter-400";
+                    font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 3px;
+                    cursor: pointer;
+                    padding: 3px 0;
+                    & svg {
+                        color: #292929;
+                        width: 14px;
+                        height: 15px;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}

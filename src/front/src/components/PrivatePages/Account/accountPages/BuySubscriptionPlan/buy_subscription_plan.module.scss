@@ -1,0 +1,189 @@
+@import "../../../../../assets/mixins/mixins.scss";
+
+.buy_subscription_plan_wrapper {
+    @include size(100%, 100vh);
+    @include flexCenter();
+    align-items: flex-start;
+    .buy_subscription_plan_wrapper_main {
+        @include flColStart();
+        gap: 24px;
+        width: calc(100% - 94px);
+        height: 100%;
+        .buy_plan_main_section {
+            @include flColStart();
+            @include size(100%, 100%);
+            gap: 27px;
+            padding-top: 20px;
+            max-width: 900px;
+            align-self: center;
+            .buy_plan_header_card_wrapper {
+                @include flColStart();
+                @include size(100%, 100%);
+                gap: 27px;
+                .buy_plan_header {
+                    @include flexCenterBetween();
+                    width: 100%;
+                    .buy_plan_header_info {
+                        @include flColStart();
+                        gap: 8px;
+                        & > h2 {
+                            @include font(20px, normal, "Inter-400", #292929);
+                            font-weight: 400;
+                        }
+                        & > p {
+                            @include font(12px, normal, "Inter-400", #808080);
+                            font-weight: 400;
+                        }
+                    }
+                    .buy_plan_header_yearly_monthly {
+                        @include flexCenterBetween();
+                        width: calc(100% - 321px);
+                        height: 32px;
+                        border-radius: 20px;
+                        background: #f8f8f8;
+                        box-shadow: 0px 0.5px 5px 0px rgba(0, 0, 0, 0.25) inset;
+                        padding: 4px 5px;
+                        max-width: 600px;
+                        position: relative;
+                        .buy_plan_date {
+                            @include flexCenter();
+                            width: 50%;
+                            height: 100%;
+                            cursor: pointer;
+                            & > span {
+                                @include font(12px, normal, "Inter-400", #808080);
+                            }
+                        }
+                        .buy_plan_clicked_btn {
+                            position: absolute;
+                            @include flexCenter();
+                            @include size(50%, 24px);
+                            border-radius: 16px;
+                            background: #fff;
+                            box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.25);
+                            cursor: pointer;
+                            left: 5px;
+                            transition: 300ms ease-in-out;
+                            padding: 0 15px;
+                            & > span {
+                                @include font(12px, normal, "Inter-400", #292929);
+                                font-weight: 400;
+                                &:nth-child(2) {
+                                    color: #0f9918;
+                                    margin-left: 3px;
+                                }
+                            }
+                        }
+                        .buy_plan_clicked_btn.yearly {
+                            left: calc(50% - 5px);
+                        }
+                    }
+                }
+                .buy_plan_cards {
+                    @include flexStartCenter();
+                    @include size(100%, 100%);
+                    gap: 15px;
+                    padding-top: 9px;
+                    .buy_plan_card {
+                        @include flColCenterBetween();
+                        width: 32%;
+                        height: calc(100% - 118px);
+                        max-height: 350px;
+                        border-radius: 20px;
+                        background: #fff;
+                        box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.3);
+                        overflow: hidden;
+                        cursor: pointer;
+                        .card_price_name {
+                            @include flColStart();
+                            padding: 16px 20px;
+                            gap: 16px;
+                            width: 100%;
+                            height: 100px;
+                            background: var(--m-c);
+                            .card_name {
+                                height: 21px;
+                                @include flexCenter();
+                                border-radius: 5px;
+                                padding: 0 5px;
+                                & > span {
+                                    @include font(12px, normal, "Inter-500", #fff);
+                                    font-weight: 500;
+                                    text-transform: uppercase;
+                                }
+                            }
+                            & [data-type="Light"] {
+                                background-color: #797979;
+                            }
+                            & [data-type="Pro"] {
+                                background: #1b8f23;
+                            }
+                            & [data-type="Team"] {
+                                background: #a4508b;
+                            }
+                            .card_price {
+                                @include flexStartStart();
+                                gap: 2px;
+                                & > span {
+                                    @include font(12px, normal, "Inter-500", #fff);
+                                    font-weight: 500;
+                                    &:nth-child(2) {
+                                        @include font(36px, normal, "Inter-500", #fff);
+                                        font-weight: 500;
+                                        line-height: 32px;
+                                    }
+                                }
+                            }
+                        }
+                        .card_info {
+                            @include flColStartBetween();
+                            width: 100%;
+                            height: 100%;
+                            padding: 20px;
+                            gap: 20px;
+                            .card_info_wrapper {
+                                @include flColStart();
+                                gap: 12px;
+                                margin-top: 8px;
+                                & > li {
+                                    @include flexCenterStart();
+                                    gap: 12px;
+                                    list-style: none;
+                                    & > span {
+                                        @include font(12px, normal, "Inter-400", #292929);
+                                        font-weight: 400;
+                                    }
+                                    & > svg {
+                                        font-size: small;
+                                        color: #292929;
+                                    }
+                                }
+                            }
+                            .card_info_btn {
+                                @include size(100%, 28px);
+                                @include flexCenter();
+                                @include font(12px, normal, "Inter-400", #fff);
+                                border-radius: 8px;
+                                background: #560bad;
+                                border: none;
+                                cursor: pointer;
+                            }
+                            .card_info_btn.active {
+                                border-radius: 8px;
+                                border: 1px solid var(--m-c);
+                                background: #fff;
+                                color: var(--m-c);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1740px) {
+    .buy_subscription_plan_wrapper {
+        width: calc(100% - 140px);
+    }
+}

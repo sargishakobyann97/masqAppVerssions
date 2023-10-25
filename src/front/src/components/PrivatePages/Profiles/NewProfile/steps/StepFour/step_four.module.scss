@@ -1,0 +1,70 @@
+.step_four_wrapper {
+    .new_profile_item_label {
+        color: #292929;
+        font-family: "Inter-400";
+        font-size: 14px;
+        line-height: 24px;
+        display: block;
+        margin: 24px 0 5.5px 0; // 24px --> 20px
+    }
+
+    .proxy_cookies_btn {
+        border-radius: 5px;
+        border: 1px solid #d9d9d9;
+        width: 220px;
+        height: 36px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 12px;
+
+        & span {
+            color: #292929;
+            font-family: "Inter-400";
+            font-size: 12px;
+        }
+        & svg {
+            color: #808080;
+            font-size: 14px;
+        }
+    }
+
+    .fingerprints_wrapper {
+        border-radius: 5px;
+        border: 1px solid #d9d9d9;
+
+        .finger_item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px 0 12px;
+            color: #292929;
+            font-family: "Inter-400";
+            font-size: 12px;
+            font-weight: 400;
+            height: 37px;
+        }
+        .finger_item:not(.finger_item:last-child) {
+            border-bottom: 1px solid #e8ebed;
+        }
+    }
+
+    .next_back_page_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .back_page_btn {
+            color: var(--m-c);
+            font-family: "Inter-400";
+            font-size: 14px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 27px;
+            cursor: pointer;
+        }
+    }
+}

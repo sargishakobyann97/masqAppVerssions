@@ -1,0 +1,112 @@
+@import "../../../assets/mixins/mixins.scss";
+
+.search_wrapper {
+    position: relative;
+    width: 257px;
+    height: 30px;
+    & *::-webkit-scrollbar {
+        width: 0;
+    }
+    .search {
+        @include size(100%, 100%);
+        @include flexCenterStart();
+        @include font(10px, normal, "Inter-400", #808080);
+        font-weight: 400;
+        padding-left: 28px;
+        padding-right: 15px;
+        border: 1px solid #e8ebed;
+        border-radius: 5px;
+        background-color: #fff;
+        position: relative;
+        z-index: 12;
+    }
+    .search_icon {
+        position: absolute;
+        left: 9px;
+        top: 3px;
+        z-index: 12;
+        & > svg {
+            color: #808080;
+        }
+    }
+    .found_items_wrapper {
+        @include flColStart();
+        position: relative;
+        width: 100%;
+        display: none;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background: #fff;
+        box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.15);
+        padding: 25px 10px 10px 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 280px;
+        top: -18px;
+        z-index: 11;
+        .nothing_found_message {
+            @include font(12px, normal, "Inter-400", #808080);
+            font-weight: 400;
+        }
+        .found_item {
+            width: 100%;
+            padding: 3px 0 4px 0;
+            text-decoration: none;
+            border-bottom: 1px solid #e8ebed;
+            cursor: pointer;
+            &:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+            & > span {
+                @include font(12px, normal, "Inter-400", #808080);
+                display: block;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-weight: 400;
+                transition-duration: 200ms;
+                &:hover {
+                    color: var(--m-c);
+                }
+            }
+            .found_item_paths_wrapper {
+                display: flex;
+                .found_item_path {
+                    @include font(10px, normal, "Inter-400", #808080);
+                    text-decoration: none;
+                    font-weight: 400;
+                    transition-duration: 200ms;
+                    & > span:nth-child(1) {
+                        margin-right: 2px;
+                    }
+                    margin-right: 2px;
+                    &:nth-child(1) {
+                        order: 3;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    &:nth-child(2) {
+                        order: 2;
+                    }
+                    &:nth-child(3) {
+                        order: 1;
+                    }
+                    &:hover {
+                        color: var(--m-c);
+                    }
+                    &:hover ~ .found_item_path {
+                        color: var(--m-c);
+                    }
+                    & > span:nth-child(2) {
+                        color: #808080 !important;
+                    }
+                }
+            }
+        }
+    }
+    .found_items_wrapper.active {
+        display: flex;
+    }
+}

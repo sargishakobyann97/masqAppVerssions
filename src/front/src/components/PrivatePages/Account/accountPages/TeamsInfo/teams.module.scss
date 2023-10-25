@@ -1,0 +1,124 @@
+@import "../../../../../assets/mixins/mixins.scss";
+
+.teams_wrapper {
+    @include flColStart();
+    width: calc(100% - 94px);
+    padding: 34px 0;
+    .teams_header {
+        @include font(28px, normal, "Inter-400", #292929);
+        font-weight: 400;
+        margin-bottom: 32px;
+    }
+    .teams_main_wrapper {
+        @include flColStart();
+        width: 100%;
+        margin-top: 33px;
+        gap: 28px;
+        .teams_main_header_text {
+            @include flColStart();
+            gap: 8px;
+            .your_team {
+                @include font(20px, normal, "Inter-400", #292929);
+                font-weight: 400;
+            }
+            .your_team_text {
+                @include font(12px, normal, "Inter-400", #808080);
+                font-weight: 400;
+            }
+        }
+        .all_teams_items_wrapper {
+            @include flColStart();
+            width: 100%;
+            max-width: 1200px;
+            .team_item {
+                @include size(100%, 72px);
+                @include flexCenterBetween();
+                border-top: 1px solid #e8ebed;
+                border-bottom: 1px solid #e8ebed;
+                &:last-child {
+                    border-bottom: none;
+                }
+                .team_item_main_wrapper {
+                    // @include flexCenterStart();
+                    // gap: 24px;
+                    display: grid;
+                    grid-template-columns: 56px 150px 135px 1fr;
+                    align-items: center;
+                    .team_item_logo {
+                        @include size(32px, 32px);
+                        @include flexCenter();
+                        position: relative;
+                        border-radius: 50%;
+                        background: var(--m-c);
+                        & > svg {
+                            @include size(20px, 20px);
+                            color: #fff;
+                        }
+                        .crown_wrapper {
+                            @include size(13px, 13px);
+                            @include flexCenter();
+                            position: absolute;
+                            border-radius: 50%;
+                            background: #fff;
+                            right: -3px;
+                            bottom: -3px;
+                        }
+                    }
+                    .team_item_name {
+                        @include font(12px, normal, "Inter-400", #292929);
+                        font-weight: 400;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        max-width: 140px;
+                    }
+                    .team_item_status {
+                        @include size(89px, 23px);
+                        @include font(10px, normal, "Inter-400", #fff);
+                        @include flexCenter();
+                        // display: flex;
+                        // justify-content: center;
+                        // align-items: center;
+                        background: var(--m-c);
+                        border-radius: 11.5px;
+                    }
+                    .team_item_user_count {
+                        @include font(12px, normal, "Inter-400", #808080);
+                        font-weight: 400;
+                    }
+                }
+                .team_item_btn {
+                    @include font(12px, normal, "Inter-400", var(--m-c));
+                    font-weight: 400;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .you_arent_team_member {
+        @include flColCenter();
+        width: 100%;
+        height: calc(100vh - 230px);
+        gap: 24px;
+        .you_arent_team_text {
+            @include font(16px, normal, "Inter-400", #808080);
+            font-weight: 400;
+            line-height: 15px;
+        }
+        .you_arent_team_btn {
+            @include size(200px, 36px);
+            @include flexCenter();
+            @include font(15px, normal, "Inter-400", #fff);
+            border-radius: 20px;
+            background: #560bad;
+            cursor: pointer;
+            text-decoration: none;
+            transition-duration: 200ms;
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+    }
+}

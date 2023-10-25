@@ -1,0 +1,140 @@
+//For size
+@mixin size($wdth, $hdth) {
+    width: $wdth;
+    height: $hdth;
+}
+//For texts
+@mixin font($size, $style, $family, $color) {
+    font-size: $size;
+    font-style: $style;
+    font-family: $family;
+    color: $color;
+}
+//Flexboxes
+@mixin flexWrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flexStartStart {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+@mixin flexCenterStart {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+@mixin flexStartCenter {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+@mixin flexBetween {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+@mixin flexCenterBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@mixin flexEndBetween {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+@mixin flexEvenly {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+@mixin flexCenterEnd {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+@mixin flexEndCenter {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+@mixin flexCenterEnd {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+@mixin flColCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flColCenterStart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+@mixin flColStartCenter() {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+@mixin flColCenterBetween {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+@mixin flColStartBetween {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+@mixin flColBetween {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+@mixin flColEvenly {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+@mixin flColAround {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+@mixin flColEnd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+@mixin flColStart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+@mixin flColEndStart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}

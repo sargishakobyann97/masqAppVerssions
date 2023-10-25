@@ -1,0 +1,42 @@
+@import "../../../../assets/mixins/mixins.scss";
+
+.settings_personalization_wrapper {
+    @include flColStart();
+    width: calc(100%);
+    gap: 28px;
+    .personalization_item {
+        @include flexBetween();
+        width: calc(100% - 36px);
+        height: 60px;
+        align-self: flex-end;
+        border-bottom: 1px solid #e8ebed;
+        &:last-child {
+            border-bottom: none;
+        }
+        .personalization_item_text_place {
+            @include flColStart();
+            width: 50%;
+            gap: 7px;
+            & > h2 {
+                @include font(16px, normal, "Inter-400", #292929);
+                font-weight: 400;
+            }
+            & > p {
+                @include font(10px, normal, "Inter-400", #808080);
+                font-weight: 400;
+            }
+        }
+        .personalization_item_toggled_items_place {
+            @include flexCenter();
+            height: 36px;
+            & > a {
+                @include font(10px, normal, "Inter-400", var(--m-c));
+                text-decoration: none;
+                font-weight: 400;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}

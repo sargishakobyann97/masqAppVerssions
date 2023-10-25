@@ -1,0 +1,80 @@
+@import "../../../assets/mixins/mixins.scss";
+.success_modal_wrapper {
+    @include size(100vw, 100vh);
+    @include flexCenter();
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.15);
+    .modal_main {
+        @include flexCenterStart();
+        width: 480px;
+        min-height: 95px;
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+        position: relative;
+        animation: eventsAnm 200ms;
+        animation-fill-mode: forwards;
+        gap: 34px;
+        padding: 19.5px 24px;
+        & > img {
+            @include size(40px, 56px);
+            object-fit: contain;
+            // position: absolute;
+            top: 19px;
+            left: 36px;
+        }
+
+        .icon_wrapper {
+            @include size(51px, 51px);
+            @include flexCenter();
+            box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            position: relative;
+            &::after {
+                content: "";
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        .modal_info_place {
+            width: calc(100% - 146px);
+            max-height: 190px;
+            overflow-y: auto;
+            .modal_header {
+                @include font(16px, normal, "Inter-400", #292929);
+                font-weight: 400;
+                margin-bottom: 4px;
+            }
+            .modal_text {
+                @include font(12px, normal, "Inter-400", #292929);
+                font-weight: 400;
+            }
+        }
+        .close_success_modal {
+            @include size(14px, 14px);
+            @include flexCenter();
+            cursor: pointer;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            & > svg {
+                width: 18px;
+                height: 18px;
+                color: #292929;
+            }
+        }
+    }
+}
+
+@keyframes eventsAnm {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(100%);
+    }
+}

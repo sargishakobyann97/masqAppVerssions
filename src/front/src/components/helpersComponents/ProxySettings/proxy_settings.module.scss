@@ -1,0 +1,100 @@
+.proxy_settings_wrapper {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 39px);
+    background-color: #fff;
+    z-index: 3;
+
+    .new_profile_item_label {
+        color: #292929;
+        font-family: "Inter-400";
+        font-size: 14px;
+        line-height: 24px;
+        display: block;
+        margin: 20px 0 5px 0; // 24px --> 20px
+    }
+
+    .delete_proxy_btn {
+        position: absolute;
+        top: 39px;
+        right: 45px;
+        color: var(--m-c);
+        font-family: "Inter-400";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19px;
+        cursor: pointer;
+    }
+
+    .back_to_profiles_btn {
+        color: var(--m-c);
+        font-family: "Inter-400";
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 15px; /* 107.143% */
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 34px;
+        width: fit-content;
+        & svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    .proxy_inputs_wrapper {
+        position: relative;
+        .proxy_inp {
+            width: 320px;
+            height: 36px;
+            flex-shrink: 0;
+            font-family: "Inter-400";
+            font-size: 14px;
+            line-height: 15px; /* 107.143% */
+            padding: 0 5px;
+            border-radius: 5px;
+            border: 1px solid #d9d9d9;
+            outline: none;
+        }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 85px;
+
+        .save_and_check_btns_wrapper {
+            position: absolute;
+            bottom: -60px;
+            width: 100%;
+            padding-right: 29px;
+            gap: 22px;
+            display: flex;
+            justify-content: flex-end;
+            .check_proxy_btn,
+            .save_proxy_btn {
+                border-radius: 30px;
+                height: 30px;
+                border: 1px solid var(--m-c);
+                color: var(--m-c);
+                font-family: "Inter-400";
+                font-size: 12px;
+                padding: 0 24px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            .save_proxy_btn {
+                background-color: var(--m-c);
+                color: #fff;
+                border: none;
+                text-transform: capitalize;
+                min-width: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

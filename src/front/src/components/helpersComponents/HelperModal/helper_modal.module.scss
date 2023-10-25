@@ -1,0 +1,382 @@
+@import "../../../assets/mixins/mixins.scss";
+
+.helper_modal_wrapper {
+    @include size(100vw, 100vh);
+    @include flexCenter();
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.15);
+    .helper_modal_main_wrapper {
+        @include flColCenterStart();
+        position: relative;
+        width: 320px;
+        padding: 24px;
+        background: #fff;
+        box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+        border-radius: 16px;
+        &.choose_method {
+            width: 419px;
+        }
+        .helper_modal_close_btn {
+            @include size(14px, 14px);
+            @include flexCenter();
+            position: absolute;
+            cursor: pointer;
+            top: 20px;
+            right: 20px;
+            & > svg {
+                @include size(14px, 14px);
+                color: #808080;
+            }
+        }
+        .helper_modal_icon_text {
+            @include flColCenterStart();
+            width: 100%;
+            & > div {
+                @include size(74px, 74px);
+                @include flexCenter();
+                box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+                &:after {
+                    @include size(35px, 35px);
+                    content: "";
+                }
+            }
+            & > img {
+                @include size(82px, 84px);
+                @include flexCenter();
+                object-fit: contain;
+            }
+            & > h2 {
+                @include font(18px, normal, "Inter-500", #292929);
+                font-weight: 500;
+                margin-top: 17px;
+                white-space: nowrap;
+            }
+            & > p {
+                // white-space: nowrap;
+                @include font(14px, normal, "Inter-400", #808080);
+                font-weight: 400;
+                margin-top: 9px;
+                text-align: center;
+            }
+        }
+        .helper_modal_btns {
+            @include flColCenterStart();
+            gap: 17px;
+            margin-top: 20px;
+            .helper_modal_confirm_btn {
+                @include size(256px, 34px);
+                @include flexCenter();
+                @include font(12px, normal, "Inter-400", #292929);
+                border-radius: 10px;
+                background: #f5f5f5;
+                border: none;
+                font-weight: 400;
+                cursor: pointer;
+            }
+            .helper_modal_cancel_btn {
+                @include flexCenter();
+                @include font(12px, normal, "Inter-400", #292929);
+                font-weight: 400;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+            .helper_modal_select_place {
+                @include flexCenter();
+            }
+            .helper_modal_input_place {
+                position: relative;
+                .show_password_wrapper {
+                    position: absolute;
+                    top: 9px;
+                    right: 9px;
+                    cursor: pointer;
+                    & > svg {
+                        @include size(16px, 16px);
+                        color: #808080;
+                    }
+                }
+                .helper_modal_input {
+                    @include size(256px, 34px);
+                    @include flexCenter();
+                    @include font(10px, normal, "Inter-400", #292929);
+                    text-align: center;
+                    font-weight: 400;
+                    border-radius: 10px;
+                    background: #fff;
+                    border: 1px solid #bcbcbc;
+                    &:focus::placeholder {
+                        opacity: 0;
+                    }
+                }
+                .helper_modal_input.active {
+                    animation: shake 0.7s forwards;
+                }
+            }
+
+            .helper_modal_delete_btn {
+                @include flexCenter();
+                font-family: "Inter-400";
+                font-size: 12px;
+                font-weight: 400;
+                color: #808080;
+                border: none;
+                cursor: pointer;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: linear-gradient(to right, red, red 50%, #808080 50%);
+                background-size: 200% 100%;
+                background-position: 100%;
+            }
+            .main_color {
+                background-image: linear-gradient(to right, var(--m-c), var(--m-c) 50%, #808080 50%) !important;
+            }
+            .helper_modal_delete_btn.active {
+                transition: all 0.3s cubic-bezier(0, 0, 0.23, 1);
+                background-position: 0%;
+            }
+
+            .helper_modal_select_btn {
+                @include font(12px, normal, "Inter-400", var(--m-c));
+                font-weight: 400;
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+        }
+    }
+    .helper_modal_main_import_export_folder {
+        @include flColCenterStart();
+        width: 633px;
+        background: #fff;
+        box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+        border-radius: 16px;
+        overflow: hidden;
+        padding: 20px 0;
+        position: relative;
+        .helper_modal_close_btn {
+            @include size(14px, 14px);
+            @include flexCenter();
+            position: absolute;
+            cursor: pointer;
+            top: 15px;
+            right: 15px;
+            & > svg {
+                @include size(14px, 14px);
+                color: #808080;
+            }
+        }
+        .export_folder_header_btn {
+            @include flexCenterBetween();
+            width: 100%;
+            padding: 14px 30px 14px 43px;
+            border-bottom: 1px solid #e8ebed;
+            .export_folder_header {
+                @include flColStart();
+                gap: 5px;
+                & > h2 {
+                    @include font(14px, normal, "Inter-400", #292929);
+                    font-weight: 400;
+                }
+                & > p {
+                    @include font(12px, normal, "Inter-400", rgba(0, 0, 0, 0.5));
+                    &.limit_exceeded {
+                        animation: shakeX 500ms forwards;
+                    }
+                }
+            }
+            .export_folder_btn {
+                @include size(116px, 25px);
+                @include flexCenter();
+                @include font(12px, normal, "Inter-400", #fff);
+                border-radius: 5px;
+                font-weight: 400;
+                border: none;
+                background-color: var(--m-c);
+                &:disabled {
+                    background: #808080;
+                }
+                cursor: pointer;
+            }
+        }
+        .search_profiles_wrapper {
+            @include flColStart();
+            gap: 30px;
+            width: 100%;
+            padding: 0 40px 24px 40px;
+            position: relative;
+            margin-top: 20px;
+            .search_icon {
+                position: absolute;
+                color: rgba(0, 0, 0, 0.5);
+                left: 52px;
+                top: 7px;
+                width: 18px;
+            }
+            .search_profiles_input {
+                @include size(100%, 36px);
+                @include flexCenterStart();
+                @include font(12px, normal, "Inter-400", rgba(0, 0, 0, 0.5));
+                border-radius: 5px;
+                border: 1px solid rgba(0, 0, 0, 0.5);
+                background: #fff;
+                outline: none;
+                font-weight: 400;
+                padding: 0 15px 0 38px;
+            }
+        }
+        .all_profiles_wrapper {
+            @include flColStart();
+            width: 100%;
+            padding: 0 40px 20px 40px;
+            .all_profiles_header {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 50px 1fr 1fr 1fr 2fr 29px;
+                margin-bottom: 6px;
+                & > div {
+                    @include font(12px, normal, "Inter-400", #808080);
+                    font-weight: 400;
+                    &:last-child {
+                        color: #292929;
+                    }
+                }
+            }
+            .all_profiles_items_place {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                max-height: calc(100vh - 380px);
+                overflow-y: auto;
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
+                .nothing_found {
+                    @include font(12px, normal, "Inter-400", #808080);
+                    font-weight: 400;
+                    margin-top: 10px;
+                }
+                .all_profiles_item {
+                    width: 100%;
+                    // height: 42px;
+                    padding: 17px 0 14px;
+                    display: grid;
+                    grid-template-columns: 50px 100px 1fr 1fr 2fr 29px;
+                    border-bottom: 1px solid #e8ebed;
+                    align-items: center;
+                    cursor: pointer;
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                    & > div {
+                        height: 22px;
+                        display: flex;
+                        align-items: center;
+                        & > span {
+                            @include font(12px, normal, "Inter-400", #292929);
+                            font-weight: 400;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                        }
+                        &:nth-of-type(2) {
+                            margin-right: 20px;
+                        }
+                    }
+                    .all_profiles_number {
+                        @include size(17px, 17px);
+                        @include flexCenter();
+                        @include font(9px, normal, "Inter-400", #fff);
+                        font-weight: 400;
+                        background-color: #808080;
+                        border-radius: 50%;
+                    }
+                    & [data-type="choose"] {
+                        background-color: var(--m-c);
+                    }
+                    .all_profiles_add {
+                        & > svg {
+                            @include size(22px, 22px);
+                            color: #292929;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(1deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(-1deg);
+    }
+    40% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(1deg);
+    }
+    60% {
+        transform: rotate(0);
+    }
+    70% {
+        transform: rotate(-1deg);
+    }
+    80% {
+        transform: rotate(0);
+    }
+    90% {
+        transform: rotate(1deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+@keyframes shakeX {
+    0% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(3px);
+    }
+    20% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(-3px);
+    }
+    40% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(3px);
+    }
+    60% {
+        transform: translateX(0);
+    }
+    70% {
+        transform: translateX(-3px);
+    }
+    80% {
+        transform: translateX(0);
+    }
+    90% {
+        transform: translateX(3px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

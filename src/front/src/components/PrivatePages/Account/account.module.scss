@@ -1,0 +1,369 @@
+@import "../../../assets/mixins/mixins.scss";
+.account_wrapper {
+    @include size(100%, 100vh);
+    @include flexStartStart();
+    .account_wrapper_main {
+        @include flColStart();
+        align-items: center;
+        padding-top: 170px;
+        gap: 84px;
+        width: 100%;
+        padding-right: 94px;
+        height: 100%;
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .us_balance_wrapper {
+            position: absolute;
+            top: -150px;
+            right: 0;
+        }
+        .account_pages_wrapper {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: 1fr 1fr;
+            gap: 24px;
+            position: relative;
+            .teams_wr {
+                height: 180px;
+                grid-area: 2/1/3/7;
+                // @include size(100%, 100%);
+                background-image: url("../../../assets/images/teams_media.png");
+                background-size: 150px;
+                background-position: 95% -60%;
+                transition-duration: 300ms;
+            }
+            .device_wr {
+                transition-duration: 300ms;
+                min-width: 275px;
+                height: 180px;
+                grid-area: 2/7/3/10;
+                background-image: url("../../../assets/images/devices_media.png");
+                background-size: 210px;
+                background-position: 120px 45px;
+            }
+
+            .subscription_sec_wrapper {
+                transition-duration: 300ms;
+                @include flColStartBetween();
+                width: 100%;
+                grid-area: 1/1/2/9;
+                gap: 30px;
+                position: relative;
+                text-decoration: none;
+                height: 180px;
+                background-image: url("../../../assets/images/subscription_media.png");
+                background-size: 190px;
+                background-position: 95% -38%;
+                background-repeat: no-repeat;
+                border-radius: 10px;
+                box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+                overflow: hidden;
+                padding: 30px;
+                cursor: pointer;
+
+                .subscription_sec_text_wrapper {
+                    width: 100%;
+                    .subscription_title {
+                        font-family: "Inter-400";
+                        font-weight: 400;
+                        font-size: 28px;
+                        line-height: 32px;
+                        color: #292929;
+                    }
+                    .subscription_sub_title {
+                        font-family: "Inter-400";
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 19px;
+                        color: #808080;
+                        margin-top: 10px;
+                        & > span {
+                            color: var(--m-c);
+                            font-family: "Inter-500";
+                            font-weight: 500;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+                .subscription_btn_wrapper {
+                    @include flexCenterStart();
+                    gap: 20px;
+                    .subscription_active_btn {
+                        display: flex;
+                        width: max-content;
+                        align-items: center;
+                        background: #0f9918;
+                        border-radius: 30px;
+                        font-family: "Inter-400";
+                        font-size: 14px;
+                        line-height: 14px;
+                        color: #fff;
+                        height: 34px;
+                        padding: 0 30px;
+                        cursor: pointer;
+                    }
+                    .subscription_not_active_btn {
+                        background: #808080;
+                    }
+                    .subscription_plans_btn {
+                        @include font(14px, normal, "Inter-400", var(--m-c));
+                        font-weight: 400;
+                        text-decoration: none;
+                    }
+                }
+            }
+            .search_refresh_sec_wrapper {
+                @include flColCenterBetween();
+                height: 180px;
+                grid-area: 1/9/2/10;
+                // max-height: 215px;
+                gap: 24px;
+                & > div:nth-child(1):active {
+                    & svg {
+                        transform: rotate(180deg);
+                    }
+                }
+                // & > div:hover {
+                //     transform: scale(1.05);
+                // }
+                & > div {
+                    @include size(78px, 78px);
+                    @include flexCenter();
+                    transition-duration: 300ms;
+                    border-radius: 15px;
+                    background: #fff;
+                    box-shadow: -0.5px 0.5px 5px 0px rgba(0, 0, 0, 0.3);
+                    cursor: pointer;
+                    & > svg {
+                        transition-duration: 200ms;
+                    }
+                    &:nth-child(2) svg {
+                        width: 35px;
+                        height: 35px;
+                        color: var(--m-c);
+                    }
+                }
+            }
+            .sec_row_item {
+                @include flColStartBetween();
+                text-decoration: none;
+                border-radius: 10px;
+                background-repeat: no-repeat;
+                box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+                padding: 30px 0 24px 30px;
+                .sec_item_texts_wrapper {
+                    @include flColStartBetween();
+                    gap: 6px;
+                    & > h2 {
+                        @include font(28px, normal, "Inter-400", #292929);
+                        font-weight: 400;
+                    }
+                    & > p {
+                        @include font(14px, normal, "Inter-400", #808080);
+                        font-weight: 400;
+                    }
+                }
+                & > span {
+                    @include font(14px, normal, "Inter-500", var(--m-c));
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+                .account_team_status_wrapper {
+                    @include flexCenterStart();
+                    gap: 20px;
+                    .account_team_status {
+                        // @include size(116px, 34px);
+                        padding: 8px 30px;
+                        @include flexCenter();
+                        @include font(14px, normal, "Inter-500", #fff);
+                        font-weight: 500;
+                        background-color: #808080;
+                        border-radius: 30px;
+                    }
+                    .account_team_status.active {
+                        background-color: #0f9918;
+                    }
+                    & > span {
+                        @include font(14px, normal, "Inter-500", var(--m-c));
+                        font-weight: 500;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-height: 820px) {
+    .account_pages_wrapper {
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: 1fr 1fr 1fr !important;
+        .teams_wr {
+            height: 180px !important;
+            grid-area: 2/1/3/10 !important;
+            background-size: 170px !important;
+            background-position: 96% -10% !important;
+        }
+        .device_wr {
+            height: 180px !important;
+            grid-area: 3/1/4/10 !important;
+            background-size: 250px !important;
+            background-position: 95% 25px !important;
+        }
+    }
+}
+
+@media only screen and (min-width: 1480px) {
+    .account_pages_wrapper {
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: 1fr 1fr !important;
+        width: 1200px;
+        .subscription_active_btn {
+            padding: 10px 35px !important;
+        }
+        .sec_row_item {
+            justify-content: center !important;
+            gap: 70px !important;
+        }
+
+        .sec_item_texts_wrapper {
+            & > h2 {
+                font-size: 30px !important;
+                margin-bottom: 4px !important;
+            }
+            & > p {
+                font-size: 16px !important;
+            }
+        }
+
+        .search_refresh_sec_wrapper {
+            height: 240px !important;
+            & > div {
+                width: 98px !important;
+                height: 98px !important;
+            }
+        }
+
+        .subscription_sec_wrapper {
+            height: 240px !important;
+            background-position: 90% -20% !important;
+            background-size: 260px !important;
+            padding-left: 40px !important;
+            .subscription_title {
+                font-size: 30px !important;
+                margin-bottom: 14px !important;
+            }
+            .subscription_sub_title {
+                font-size: 16px !important;
+            }
+            .subscription_plans_btn {
+                font-size: 16px !important;
+            }
+            .subscription_active_btn {
+                font-size: 16px !important;
+            }
+        }
+        .teams_wr {
+            height: 240px !important;
+            grid-area: 2/1/3/7 !important;
+            background-size: 28% !important;
+            background-position: 90% -12% !important;
+            padding-left: 40px !important;
+        }
+        .device_wr {
+            min-width: 310px !important;
+            height: 240px !important;
+            grid-area: 2/7/3/10 !important;
+            background-position: 180px 60px !important;
+            padding-left: 40px !important;
+            background-size: 270px !important;
+        }
+        .sec_item_btn {
+            font-size: 16px !important;
+        }
+        .account_team_status {
+            font-size: 16px !important;
+        }
+    }
+}
+
+@media only screen and (max-height: 820px) {
+    .account_pages_wrapper {
+        max-width: 950px !important;
+
+        .subscription_active_btn {
+            padding: 0px 30px !important;
+        }
+        .sec_row_item {
+            justify-content: space-between !important;
+            gap: 30px !important;
+        }
+
+        .sec_item_texts_wrapper {
+            & > h2 {
+                font-size: 28px !important;
+                margin-bottom: 0px !important;
+            }
+            & > p {
+                font-size: 14px !important;
+            }
+        }
+
+        .search_refresh_sec_wrapper {
+            height: 180px !important;
+            & > div {
+                width: 78px !important;
+                height: 78px !important;
+            }
+        }
+
+        .subscription_sec_wrapper {
+            height: 180px !important;
+            background-size: 190px !important;
+            background-position: 90% -33% !important;
+            padding-left: 30px !important;
+
+            .subscription_title {
+                font-size: 28px !important;
+                margin-bottom: 0px !important;
+            }
+            .subscription_sub_title {
+                font-size: 14px !important;
+            }
+            .subscription_plans_btn {
+                font-size: 14px !important;
+            }
+            .subscription_active_btn {
+                font-size: 14px !important;
+            }
+        }
+        .teams_wr {
+            height: 180px !important;
+            grid-area: 2/1/3/7 !important;
+            background-size: 150px !important;
+            background-position: 93% -60% !important;
+            padding-left: 30px !important;
+        }
+        .device_wr {
+            height: 180px !important;
+            grid-area: 2/7/3/10 !important;
+            background-size: 210px !important;
+            background-position: 150px 45px !important;
+            padding-left: 30px !important;
+        }
+        .sec_item_btn {
+            font-size: 14px !important;
+        }
+        .account_team_status {
+            font-size: 14px !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    .account_pages_wrapper {
+        width: 725px !important;
+    }
+}

@@ -1,0 +1,15 @@
+.switch_btn {
+    border: 1px solid var(--m-c);
+    border-radius: 16px !important;
+}
+
+.switch_btn_disabled {
+    border: 1px solid rgba(221, 221, 221, 0.87) !important;
+    & > div:nth-child(2) {
+        background: rgba(221, 221, 221, 0.87) !important;
+    }
+}
+
+.does_not_checked {
+    border: 1px solid #808080;
+}

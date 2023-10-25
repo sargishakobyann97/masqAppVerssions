@@ -1,0 +1,265 @@
+@import "../../../assets/mixins/mixins.scss";
+
+.profiles_wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 0;
+    .profiles_header_input {
+        @include flexCenterStart();
+        gap: 40px;
+        margin-bottom: 17px;
+        padding-left: 3px;
+        & > h2 {
+            @include font(28px, normal, "Inter-400", #292929);
+            font-weight: 400;
+        }
+        .profiles_search_wrapper {
+            @include size(257px, 30px);
+            @include flexCenterStart();
+            position: relative;
+            & *::-webkit-scrollbar {
+                width: 0;
+            }
+            .profiles_search_icon {
+                position: absolute;
+                top: 4px;
+                left: 10px;
+                color: #808080;
+                width: 15px;
+                z-index: 13;
+            }
+            .profiles_search {
+                @include size(100%, 100%);
+                @include flexCenterStart();
+                @include font(12px, normal, "Inter-400", #808080);
+                border-radius: 5px;
+                border: 1px solid #808080;
+                background: #fff;
+                padding: 0 10px 0 28px;
+                position: relative;
+                z-index: 12;
+            }
+            .found_folder_wrapper {
+                @include flColStart();
+                width: 100%;
+                position: absolute;
+                top: 0px;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                background: #fff;
+                box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.15);
+                padding: 35px 10px 10px 10px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                max-height: 280px;
+                z-index: 11;
+                .found_folder {
+                    width: 100%;
+                    border-bottom: 1px solid #e8ebed;
+                    text-decoration: none;
+                    padding: 5px 0;
+                    & > p {
+                        @include font(12px, normal, "Inter-400", #808080);
+                        font-weight: 400;
+                        display: block;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        transition-duration: 200ms;
+                    }
+                    & > span {
+                        @include font(10px, normal, "Inter-400", #808080);
+                        font-weight: 400;
+                        margin-top: 3px;
+                        display: block;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        transition-duration: 200ms;
+                    }
+                    &:hover {
+                        & > p,
+                        & > span {
+                            color: var(--m-c);
+                        }
+                    }
+                }
+                .not_found_folder {
+                    @include font(12px, normal, "Inter-400", #808080);
+                    font-weight: 400;
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+    .create_profile_btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--m-c);
+        text-decoration: none;
+        margin-bottom: 47px;
+        padding-left: 3px;
+        & > svg {
+            width: 14px;
+            height: 14px;
+            color: inherit;
+        }
+        & > span {
+            @include font(12px, normal, "Inter-400", var(--m-c));
+            font-weight: 400;
+        }
+    }
+
+    .all_folders_wrapper {
+        width: 100%;
+        height: calc(100vh - 175px);
+        overflow-y: auto;
+        padding-right: 10%;
+
+        .your_profile_wrapper {
+            @include flColStart();
+            max-width: 1650px;
+            gap: 22px;
+            overflow-y: auto;
+            padding-left: 3px;
+            &::-webkit-scrollbar {
+                width: 5px;
+                background-color: var(--m-c);
+            }
+            .your_profile_text_place {
+                @include flColStart();
+                gap: 8px;
+                & > h2 {
+                    @include font(20px, normal, "Inter-400", #292929);
+                    font-weight: 400;
+                }
+                & > p {
+                    @include font(12px, normal, "Inter-400", #808080);
+                }
+            }
+
+            .teams_folders_wr {
+                & > h1,
+                & > h2 {
+                    color: #808080;
+                    font-family: "Inter-400";
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 32px;
+                    width: fit-content;
+                    max-width: 300px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                & > h1 {
+                    color: #292929;
+                    font-size: 20px;
+                    margin-top: 45px;
+                }
+            }
+
+            .your_profile_folder_place {
+                @include flexStartStart();
+                gap: 35px;
+                .your_profile_folders {
+                    padding-top: 5px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 37px;
+                }
+                .folder {
+                    @include flColCenterStart();
+                    position: relative;
+                    gap: 10px;
+                    text-decoration: none;
+                    transition-duration: 50ms;
+                    &:active {
+                        transform: scale(0.9);
+                    }
+                    & > div,
+                    a {
+                        @include size(100px, 100px);
+                        @include flexCenter();
+                        box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+                        border-radius: 10px;
+                        position: relative;
+                        cursor: pointer;
+                    }
+                    & > p {
+                        @include font(12px, normal, "Inter-400", #292929);
+                        font-weight: 400;
+                        max-width: 101px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .folder_create_folder {
+                        background-color: #808080;
+                        text-decoration: none;
+                        &::after {
+                            content: "";
+                            @include size(50px, 50px);
+                            background-color: #fff;
+                            clip-path: polygon(
+                                0 40%,
+                                40% 40%,
+                                40% 0,
+                                60% 0,
+                                60% 40%,
+                                100% 40%,
+                                100% 60%,
+                                60% 60%,
+                                60% 100%,
+                                40% 100%,
+                                40% 60%,
+                                0 60%
+                            );
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.your_profile_scrolled_folders {
+    min-width: 100px;
+    position: relative;
+
+    max-width: 820px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    overflow-x: auto;
+    padding: 5px 5px 0 5px;
+
+    & > ul {
+        display: flex;
+        list-style: none;
+    }
+}
+
+.sub_not_found {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    & > span {
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        background: rgb(178, 176, 176);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & svg {
+            color: #fff;
+            height: 52px;
+            width: 52px;
+        }
+    }
+}
